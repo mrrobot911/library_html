@@ -1,0 +1,420 @@
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  img,
+  svg {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+  }
+  
+  button {
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font: inherit;
+    color: inherit;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  ul,
+  ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p {
+    margin: 0;
+  }
+  fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+body {
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient( to bottom, transparent, rgb(var(--background-end-rgb)) ) rgb(var(--background-start-rgb));
+    margin: 0;
+    line-height: inherit;
+    font-family: 'Forum', cursive;
+    font-family: 'Inter', sans-serif;
+  }
+.body__container {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.header {
+    opacity: 1;
+    background-color: rgb(0 0 0 );
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1440px;
+    height: 90px;
+    display: flex;
+    position: relative;
+}
+.header__h1 {
+    opacity: 1;
+    color: rgb(255 255 255);
+    letter-spacing: 0.6px;
+    line-height: 50px;
+    font-weight: 400;
+    font-size: 30px;
+    font-family: 'Forum';
+    padding-left: 20px;
+    padding-right: 20px;  
+}
+.nav__container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+}
+.nav {
+    gap: 40px;
+    justify-content: space-between;
+    display: flex;
+}
+.nav__ul {
+    gap: 30px;
+    justify-content: space-between;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.nav_a {
+    opacity: 1;
+    color: rgb(255 255 255);
+    line-height: 50px;
+    font-size: 20px;
+}
+.nav__img {
+    cursor: pointer;
+    display: block;
+    margin-left: 40px;
+    color: inherit;
+    text-decoration: inherit;
+}
+.section {
+    margin: 0 20px;
+}
+.hero {
+    max-width: 1440px;
+    height: 600px;
+    position: relative;
+}
+.hero__div {
+    height: 600px;
+    inset: 0px;
+    position: absolute;
+}
+.gradient {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    --tw-gradient-to: rgba(18,18,21,0.1);
+    --tw-gradient-from: #0c0c0efd;
+    --tw-gradient-to: rgb(12 12 14 / 0);
+    background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+    justify-content: space-between;
+    align-items: center;
+    height: 300px;
+    display: flex;
+    position: relative;
+}
+.container__h2 {
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    opacity: 1;
+    background-color: rgb(12 12 14);
+    justify-content: center;
+    flex-shrink: 0;
+    width: 600px;
+    height: 220px;
+    display: flex;
+    z-index: 10;
+    top: 220px;
+    position: absolute; 
+}
+.container__h2 h2 {
+    opacity: 1;
+    color: rgb(255 255 255);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 40px;
+    font-family: 'Forum';
+    margin-top: auto;
+    margin-bottom: auto;
+    line-height: 50px;
+}
+.main__h2 {
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    font-size: 40px;
+    font-family: 'Forum';
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 17px;
+}
+.main__hr {
+    background-color: rgb(0 0 0);
+    border-width: 0px;
+    width: 50px;
+    height: 1px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.main__p {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 40px;
+}
+.about__photo-container {
+    gap: 25px;
+    display: flex;
+}
+.about__radio-container {
+    justify-content: center;
+    display: flex;
+    margin-top: 35px;
+    margin-bottom: 54px;
+    list-style-type: none;
+}
+.about__radio-label {
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 26px;
+    height: 26px;
+    display: flex;
+}
+.radio-input {
+    display: none;
+}
+.about__label-span {
+    background-color: rgb(187 148 95);
+    border-radius: 8px;
+    width: 16px;
+    height: 16px;
+}
+.favorites__p {
+    margin-left: 2px;
+    font-size: 20px;
+    font-weight: 700; 
+}
+.favorites__ul {
+    gap: 100px;
+    justify-content: flex-start;
+    display: flex;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.favorites__label {
+    gap: 30px;
+    font-size: 20px;
+}
+.favorites__input {
+    width: 17px;
+    height: 17px;
+    border: 2px solid black;
+	background: #F6F6f6;
+	border-radius: 8px;
+}
+.favorites__cards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 260px;
+    margin-bottom: 57px;
+}
+.article{
+    display: flex;
+    flex-direction: column;
+    width: 550px;
+    height: 555px;
+    flex-shrink: 0;
+    border: 1px solid #000;
+    background: #FFF;
+    padding: 15px 20px;
+    position: relative;
+}
+.article h3 {
+    color: #000;
+    font-family: Forum;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 200% */
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    position: relative;
+    margin-bottom: 18px;
+}
+    .article h3:after {
+        position: absolute;
+        content: '';
+        left:0px;
+        bottom:3px;
+        width: 60px;
+        height: 1px;
+        background: #BB945F;
+    }
+.article h4 {
+    color: #000;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px; /* 266.667% */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.article h5 {
+    color: #000;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+.article p {
+    color: #000;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 266.667% */
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    width: 355px;
+}
+.article img {
+    position: absolute;
+    bottom: -1px;
+    right: -41px;
+}
+.article button {
+    position: absolute;
+    color: #0C0C0E;
+    text-align: center;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    padding: 9px 27px;
+    border: 1px solid #000;
+    bottom: 15px;
+}
+.shop__p {
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 200% */
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+.shop__container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+.shop__conteiner-coffee {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap:40px;
+}
+.shop {
+    color: #BB945F;
+    font-family: Forum;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 100% */
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+.coffee__price {
+    display: flex;
+    width: 438px;
+    justify-content: space-between;
+}
+.drink{
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 200% */
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+.price:before {
+    position: absolute;
+    content: '';
+    right: 90px;
+    bottom:20px;
+    width: 100px;
+    height: 1px;
+    background: #BB945F;
+}
+.price {
+    color: #000;
+    font-family: Forum;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 200% */
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    position: relative;
+}
+.shop__conteiner-desserts{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap:40px;
+}
+.cakes__price {
+    display: flex;
+}
+.cakes{
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 200% */
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    margin-right: 215px;
+}
