@@ -65,7 +65,7 @@
                         <li>
                             <input type="radio" id="radio1" class="radio-input" checked="" value="1"/>
                             <label tabindex="0" class="about__radio-label" for="radio1">
-                                <span class="about__label-span"></span>
+                                <span class="about__label-spanBlack"></span>
                             </label>
                         </li>
                         <li>
@@ -211,44 +211,44 @@
                 <section class="section">
                     <h2 id="3" class="main__h2">Our Contacts</h2>
                     <hr class="main__hr"/>
-                    <div class="flex justify-between">
-                        <div class="text-[20px] leading-[40px] tracking-[2px]">
-                            <h3 class="font-bold">For all Library inquiries:</h3>
-                            <ul class="my-[40px]">
+                    <div class="contacts__container">
+                        <div class="contacts">
+                            <h3 class="contacts__h3">For all Library inquiries:</h3>
+                            <ul class="contacts__list">
                                 <li>
                                     Please call <a href="tel:(617) 730-2370">(617) 730-2370</a>
                                 </li>
-                                <li class="my-[20px]">
+                                <li>
                                     For TTY service, please call <a href="tel:(617) 730-2370">(617) 730-2370</a>
                                 </li>
                                 <li>
                                     Putterham Library: <a href="tel:(617) 730-2385">(617) 730-2385</a>
                                 </li>
                             </ul>
-                            <p class="mb-[20px] font-bold">Senior Staff</p>
-                            <p>
+                            <p class="contacts__p-bold">Senior Staff</p>
+                            <p class="contacts__p">
                                 Library Director: 
                                 <a href="mailto:AmandaHirst@gmail.com">
                                     <b>Amanda Hirst</b>
                                 </a>
                             </p>
                         </div>
-                        <img />
+                        <img src="/images/map.jpg" alt='map with library coordinates'/>
                     </div>
                 </section>
                 <section class="section">
-                    <h2 id="4" class="text-center my-[20px] font-[&#x27;Forum&#x27;] text-[40px] tracking-[2px] capitalize">Digital Library Cards</h2>
-                    <hr class="h-[1px] w-[50px] mx-auto bg-black border-0 mb-[40px]"/>
-                    <div class="flex items-between justify-between relative">
-                        <div class="flex flex-col w-[600px] h-[453px] items-center">
-                            <h3 class="text-[30px] tracking-[0.6px] mb-[30px]">Find your Library card</h3>
-                            <form class="flex flex-col items-center box-border border-[3px] border-[#BB945F] p-[20px]">
-                                <div class="pt-[20px] px-[20px] bg-[#BB945F] mb-[15px]">
-                                    <p class="text-[30px] mb-[20px] tracking-[0.6px] font-[&#x27;Forum&#x27;] leading-[50px]">Brooklyn Public Library</p>
-                                    <input class="w-[480px] h-[50px] mb-[25px] px-[20px] py-[8px] rounded-[10px] text-[30px] text-[#8E8E8E] leading-[50px] font-[&#x27;Forum&#x27;]" type="text" placeholder="Reader&#x27;s name"/>
-                                    <input class="w-[480px] h-[50px] mb-[25px] px-[20px] py-[8px] rounded-[10px] text-[30px] text-[#8E8E8E] leading-[50px] font-[&#x27;Forum&#x27;]" type="text" placeholder="Card number"/>
+                    <h2 id="4" class="main__h2">Digital Library Cards</h2>
+                    <hr class="main__hr"/>
+                    <div class="cards__container">
+                        <div class="card__find-container">
+                            <h3>Find your Library card</h3>
+                            <form>
+                                <div class="form__container">
+                                    <p>Brooklyn Public Library</p>
+                                    <input type="text" placeholder="Reader&#x27;s name"/>
+                                    <input type="text" placeholder="Card number"/>
                                 </div>
-                                <input type="submit" class="font-bold text-[20px] my-[20px] px-[40px] py-[10px] border-[1px] font-[&#x27;Inter&#x27;] border-black rounded-[2px]" value="Check the card"/>
+                                <input type="submit" class="submit__btn" value="Check the card"/>
                             </form>
                         </div>
                         <div class="flex flex-col items-end">
