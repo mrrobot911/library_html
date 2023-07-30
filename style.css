@@ -107,6 +107,10 @@ body {
     color: rgb(255 255 255);
     line-height: 50px;
     font-size: 20px;
+    transition: all 0.5s ease-out;
+}
+.nav_a:hover{
+    color: #BB945F;
 }
 .nav__img {
     cursor: pointer;
@@ -114,6 +118,7 @@ body {
     margin-left: 40px;
     color: inherit;
     text-decoration: inherit;
+    transition: all 0.5s ease-out;
 }
 .section {
     margin: 0 20px;
@@ -243,24 +248,26 @@ body {
     gap: 30px;
     font-size: 20px;
     position: relative;
+    cursor: pointer;
 }
 .favorites__label-bold {
     gap: 30px;
     font-size: 20px;
     position: relative;
     font-weight: 700;
+    cursor: pointer;
 }
 .favorites__label-bold::before {
     position: absolute;
     content: '';
     display: inline-block;
-    border: 2px solid black;
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    width: 17px;
+    height: 17px;
     left: -41px;
     top:2px;
-    background-image: url("/images/Group.svg")
+    background-image: url("/images/Group.svg");
+    cursor: pointer;
 }
 .favorites__label::before {
     position: absolute;
@@ -272,6 +279,7 @@ body {
     height: 17px;
     left: -39px;
     top:4px;
+    cursor: pointer;
 }
 .favorites__input {
     display: none;
@@ -351,7 +359,7 @@ body {
     bottom: -1px;
     right: -41px;
 }
-.article button {
+.article-btn {
     position: absolute;
     color: #0C0C0E;
     text-align: center;
@@ -363,6 +371,25 @@ body {
     letter-spacing: 1px;
     padding: 9px 27px;
     border: 1px solid #000;
+    bottom: 15px;
+    transition: all 0.5s ease-out;
+}
+.article-btn:hover {
+    background-color: #BB945F;
+    border: 1px solid #BB945F;
+}
+#own{
+    position: absolute;
+    color: #BB945F;
+    text-align: center;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    padding: 9px 27px;
+    border: 1px solid #BB945F;
     bottom: 15px;
 }
 .shop__p {
@@ -621,6 +648,11 @@ body {
     padding: 9px 17px;
     border: 1px solid #0C0C0E;
     margin-top: 5px;
+    transition: all 0.5s ease-out;
+}
+.card__container-btn button:hover{
+    background-color: #BB945F;
+    border: 1px solid #BB945F;
 }
 .footer {
     background: #0C0C0E;
@@ -639,6 +671,10 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 20px; /* 133.333% */
+    transition: all 0.5s ease-out;
+}
+.footer__library a:hover{
+    color: #BB945F;
 }
 .footer__library p {
     text-align: end;
@@ -683,4 +719,10 @@ body {
     font-weight: 400;
     line-height: 20px; /* 100% */
     letter-spacing: 2px;
+}
+.footer__user a:hover {
+    transition: all 0.5s ease-out;
+}
+.footer__user a:hover{
+    color: #BB945F;
 }
