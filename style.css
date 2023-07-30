@@ -136,10 +136,7 @@ body {
 .gradient {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
-    --tw-gradient-to: rgba(18,18,21,0.1);
-    --tw-gradient-from: #0c0c0efd;
-    --tw-gradient-to: rgb(12 12 14 / 0);
-    background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+    background: linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.10) 100%);
     justify-content: space-between;
     align-items: center;
     height: 300px;
