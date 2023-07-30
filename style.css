@@ -234,19 +234,47 @@ body {
     gap: 100px;
     justify-content: flex-start;
     display: flex;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin: 40px 40px;
+}
+.favorites__ul li{
+    margin-right: 28px;
 }
 .favorites__label {
     gap: 30px;
     font-size: 20px;
+    position: relative;
 }
-.favorites__input {
+.favorites__label-bold {
+    gap: 30px;
+    font-size: 20px;
+    position: relative;
+    font-weight: 700;
+}
+.favorites__label-bold::before {
+    position: absolute;
+    content: '';
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    left: -41px;
+    top:2px;
+    background-image: url("/images/Group.svg")
+}
+.favorites__label::before {
+    position: absolute;
+    content: '';
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 50%;
     width: 17px;
     height: 17px;
-    border: 2px solid black;
-	background: #F6F6f6;
-	border-radius: 8px;
+    left: -39px;
+    top:4px;
+}
+.favorites__input {
+    display: none;
 }
 .favorites__cards{
     display: flex;
@@ -496,19 +524,19 @@ body {
     font-weight: 400;
     line-height: normal;
     letter-spacing: 0.6px;
-    margin-bottom: 30px;
+    margin-bottom: 29px;
 }
 .card__find-container form {
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 3px solid #BB945F;
-    padding: 20px;
+    padding: 15px;
     width: 100%;
     height: 100%;
 }
 .form__container {
-    padding: 15px 20px 0px 20px;
+    padding: 20px 20px 0px 20px;
     background-color:#BB945F;
     width: 100%;
     height: 100%;
@@ -592,6 +620,7 @@ body {
     letter-spacing: 1px;
     padding: 9px 17px;
     border: 1px solid #0C0C0E;
+    margin-top: 5px;
 }
 .footer {
     background: #0C0C0E;
@@ -600,7 +629,7 @@ body {
 .footer__library {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 18px;
+    margin-bottom: 8px;
 }
 .footer__library a{
     width: 229px;
@@ -624,7 +653,12 @@ body {
 .footer__links {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 18px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.footer__links ul {
+    display: flex;
+    gap:15px;
 }
 .footer__links p {
     color: #FFF;
@@ -634,4 +668,19 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 20px; /* 133.333% */
+}
+.footer__user ul{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 44px;
+}
+.footer__user li {
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 100% */
+    letter-spacing: 2px;
 }
