@@ -602,6 +602,10 @@ body {
     border: 1px solid #0C0C0E;
     border-radius: 2px;
 }
+.submit__btn:hover {
+    background-color: #BB945F;
+    border: 1px solid #BB945F;
+}
 .card__get{
     display: flex;
     flex-direction: column;
