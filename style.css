@@ -42,7 +42,8 @@ html {
   p {
     margin: 0;
   }
-  fieldset {
+  fieldset,
+  input {
     margin: 0;
     padding: 0;
     border: 0;
@@ -203,31 +204,28 @@ body {
     justify-content: center;
     display: flex;
     margin-top: 35px;
-    margin-bottom: 54px;
+    margin-bottom: 50px;
     list-style-type: none;
 }
-.about__radio-label {
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+.radio-input {
+    position: relative;
+    appearance: none;
+    border-radius: 50%;
     width: 26px;
     height: 26px;
-    display: flex;
 }
-.radio-input {
-    display: none;
-}
-.about__label-spanBlack {
-    background-color: rgb(187 148 95);
-    border-radius: 8px;
-    width: 16px;
-    height: 16px;
-}
-.about__label-span {
+.radio-input::before {
+    position: absolute;
+    content: "";
+    top: 5px;
+    right: 5px;
     background-color: #0C0C0E;
-    border-radius: 8px;
+    border-radius: 50%;
     width: 16px;
     height: 16px;
+}
+.radio-input:checked:before {
+    background-color: rgb(187 148 95);
 }
 .favorites__p {
     margin-left: 2px;
@@ -235,53 +233,46 @@ body {
     font-weight: 700; 
 }
 .favorites__ul {
-    gap: 100px;
+    gap: 90px;
     justify-content: flex-start;
     display: flex;
-    margin: 40px 40px;
+    margin: 40px 0px;
 }
-.favorites__ul li{
-    margin-right: 28px;
-}
+
 .favorites__label {
-    gap: 30px;
+    margin-left: 17px;
     font-size: 20px;
     position: relative;
     cursor: pointer;
 }
-.favorites__label-bold {
-    gap: 30px;
-    font-size: 20px;
+.favorites__input {
     position: relative;
-    font-weight: 700;
-    cursor: pointer;
-}
-.favorites__label-bold::before {
-    position: absolute;
-    content: '';
-    display: inline-block;
-    border-radius: 50%;
-    width: 17px;
-    height: 17px;
-    left: -41px;
-    top:2px;
-    background-image: url("/images/Group.svg");
-    cursor: pointer;
-}
-.favorites__label::before {
-    position: absolute;
-    content: '';
-    display: inline-block;
+    appearance: none;
     border: 2px solid black;
     border-radius: 50%;
     width: 17px;
     height: 17px;
-    left: -39px;
-    top:4px;
-    cursor: pointer;
+    background-color: #FFF;
 }
-.favorites__input {
-    display: none;
+.favorites__input:checked {
+    background-color: #0C0C0E;
+    appearance: none;
+    border: 2px solid black;
+    border-radius: 50%;
+    width: 17px;
+    height: 17px;
+}
+.favorites__input:checked + label {
+    font-weight: 700;
+}
+.favorites__input:before {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    border: 3px solid white;
+    border-radius: 50%;
+    width: 13px;
+    height: 13px;
 }
 .favorites__cards{
     display: flex;
