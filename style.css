@@ -90,6 +90,13 @@ body {
     flex-direction: row;
     display: flex;
 }
+.nav__container svg {
+    fill: #FFF;
+    transition: all 0.5s ease-out;
+}
+.nav__container svg:hover {
+    fill: #BB945F;
+}
 .nav {
     gap: 40px;
     justify-content: space-between;
@@ -240,7 +247,6 @@ body {
     font-weight: 700; 
 }
 .favorites__ul {
-    /* gap: 90px; */
     justify-content: flex-start;
     display: flex;
     margin: 40px 0px;
@@ -501,6 +507,12 @@ body {
 .contacts__list {
     margin-bottom: 40px;
 }
+.contacts__list a {
+    transition: all 0.5s ease-out;
+}
+.contacts__list a:hover {
+    color: #BB945F;
+}
 .contacts li {
     color: #000;
     font-family: Inter;
@@ -533,11 +545,17 @@ body {
     letter-spacing: 2px;
     text-transform: capitalize;
 }
+.contacts__p a {
+    transition: all 0.5s ease-out;
+}
+.contacts__p a:hover {
+    color: #BB945F;
+}
 .cards__container{
     display: flex;
     justify-content: space-between;
     margin-bottom: 40px;
-    gap:21px;
+    gap: 21px;
 }
 .card__find-container {
     display: flex;
@@ -714,6 +732,13 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 20px; 
+}
+.footer__links svg {
+    fill: #FFF;
+    transition: all 0.5s ease-out;
+}
+.footer__links svg:hover {
+    fill: #BB945F;
 }
 .footer__user ul{
     display: flex;
