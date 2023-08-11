@@ -240,10 +240,14 @@ body {
     font-weight: 700; 
 }
 .favorites__ul {
-    gap: 90px;
+    /* gap: 90px; */
     justify-content: flex-start;
     display: flex;
     margin: 40px 0px;
+}
+.favorites__ul li {
+    width: 160px;
+    margin-right: 35px;
 }
 .favorites__label {
     margin-left: 17px;
@@ -714,7 +718,8 @@ body {
 .footer__user ul{
     display: flex;
     justify-content: space-between;
-    margin: 44px 0px;
+    margin-top: 44px;
+    margin-bottom: 22px;
 }
 .footer__user li {
     color: #FFF;
