@@ -604,6 +604,7 @@ body {
     padding: 10px 40px;
     border: 1px solid #0C0C0E;
     border-radius: 2px;
+    transition: all 0.5s ease-out;
 }
 .submit__btn:hover {
     background-color: #BB945F;
@@ -713,7 +714,7 @@ body {
 .footer__user ul{
     display: flex;
     justify-content: space-between;
-    margin-top: 44px;
+    margin: 44px 0px;
 }
 .footer__user li {
     color: #FFF;
@@ -852,6 +853,7 @@ body {
     }
     .toggler:checked ~ .menu {
         right: 0px;
+        position: absolute;
     }
     .menu > ul{
         display: flex;
