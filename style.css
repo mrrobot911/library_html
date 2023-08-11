@@ -840,8 +840,8 @@ body {
         transform: rotate(135deg);
     }
     .menu{
-        display: inline;
-        position: absolute;
+        display: block;
+        position: fixed;
         z-index: 20;
         top: 90px;
         right: -900px;
