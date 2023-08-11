@@ -250,10 +250,10 @@ body {
     justify-content: flex-start;
     display: flex;
     margin: 40px 0px;
+    gap: 75px;
 }
 .favorites__ul li {
-    width: 160px;
-    margin-right: 35px;
+    width: 120px;
 }
 .favorites__label {
     margin-left: 17px;
