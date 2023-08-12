@@ -410,6 +410,7 @@ body {
     padding: 9px 27px;
     border: 1px solid #BB945F;
     bottom: 15px;
+    cursor: default;
 }
 .shop__p {
     color: #000;
