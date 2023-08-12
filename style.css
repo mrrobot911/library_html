@@ -120,6 +120,16 @@ body {
 .nav_a:hover{
     color: #BB945F;
 }
+.nav_b {
+    opacity: 1;
+    color: rgb(255 255 255);
+    line-height: 50px;
+    font-size: 20px;
+    transition: all 0.5s ease-out;
+}
+.nav_b:hover{
+    color: #BB945F;
+}
 .nav__img {
     cursor: pointer;
     display: block;
