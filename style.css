@@ -144,8 +144,144 @@ body {
     z-index: 20;
     width: 80px;
     height: 115px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #FFF;
-    right: 0px;
+    right: 20px;
+    animation: showBlock 1s linear forwards;
+}
+@keyframes showBlock {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+.registr__container {
+    position: absolute;
+    z-index: 20;
+    width: 250px;
+    height: 382px;
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: #FFF;
+    right: 20px;
+}
+.login__container h3,
+.registr__container h3{
+    color: #000;
+    text-align: center;
+    font-family: Forum;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 100% */
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+.registr__label {
+    color: #000;
+    text-align: start;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 133.333% */
+    letter-spacing: 0.3px;
+}
+.registr__input {
+    width: 200px;
+    height: 20px;
+    flex-shrink: 0;
+    border: 1px solid #BB945F;
+    margin: 10px 0px;
+}
+.registr__submit {
+    color: #0C0C0E;
+    text-align: center;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    border: 1px solid #0C0C0E;
+    padding: 9px 15px;
+    align-self: start;
+    margin: 10px 0px;
+}
+.registr__menu-string {
+    display: flex;
+    gap: 10px;
+    align-self: start;
+}
+.registr__menu-string p {
+    color: #000;
+    text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.registr__menu-string a {
+    color: #0C0C0E;
+    text-align: center;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    text-decoration-line: underline;
+}
+.registr__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+.login__container {
+    position: absolute;
+    z-index: 20;
+    width: 250px;
+    height: 262px;
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: #FFF;
+    right: 20px;
+}
+.menu__h2 {
+    color: #000;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 133.333% */
+    margin-top: 5px;
+}
+.menu__hr {
+    width: 40px;
+    height: 1px;
+    color: #BB945F;
+    margin-bottom: 15px;
+}
+.menu__a {
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 133.333% */
+    margin-bottom: 10px;
 }
 .section {
     margin: 0 20px;

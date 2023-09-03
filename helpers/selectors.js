@@ -1,0 +1,1 @@
+export const userModal = document.querySelector(".nav__img_container");
