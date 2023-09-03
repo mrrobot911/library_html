@@ -27,11 +27,13 @@
                             <li><a class="nav_a" href="#4">Library Card</a></li>
                         </ul>
                     </nav>
-                    <a class="nav__img">
-                        <svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14ZM18.6667 7.77778C18.6667 10.3551 16.5774 12.4444 14.0001 12.4444C11.4227 12.4444 9.33339 10.3551 9.33339 7.77778C9.33339 5.20045 11.4227 3.11111 14.0001 3.11111C16.5774 3.11111 18.6667 5.20045 18.6667 7.77778ZM19.4998 16.2781C20.9584 17.7367 21.7778 19.715 21.7778 21.7778H14L6.22225 21.7778C6.22225 19.715 7.0417 17.7367 8.50031 16.2781C9.95893 14.8194 11.9372 14 14 14C16.0628 14 18.0411 14.8194 19.4998 16.2781Z"></path>
-                        </svg>
-                    </a>
+                    <div class="nav__img_container">
+                        <a class="nav__img">
+                            <svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14ZM18.6667 7.77778C18.6667 10.3551 16.5774 12.4444 14.0001 12.4444C11.4227 12.4444 9.33339 10.3551 9.33339 7.77778C9.33339 5.20045 11.4227 3.11111 14.0001 3.11111C16.5774 3.11111 18.6667 5.20045 18.6667 7.77778ZM19.4998 16.2781C20.9584 17.7367 21.7778 19.715 21.7778 21.7778H14L6.22225 21.7778C6.22225 19.715 7.0417 17.7367 8.50031 16.2781C9.95893 14.8194 11.9372 14 14 14C16.0628 14 18.0411 14.8194 19.4998 16.2781Z"></path>
+                            </svg>
+                        </a>
+                    </div>
                     <input type="checkbox" class="toggler" id="burgerBtn">
                     <div class="hamburger"><span></span></div>
                     <div class="menu">
@@ -61,84 +63,40 @@
                     <h2 id="0" class="main__h2">about</h2>
                     <hr class="main__hr"/>
                     <p class="main__p">The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside </p>
-                    <div class="about__photo-container">
-                        <div class="img__container">
-                            <img alt="library photo" loading="lazy" decoding="async" data-nimg="1" class="block duration-500" style="color:transparent" src="./images/image1.png"/>
-                        </div>
-                        <div class="img__container">
-                            <img alt="library photo" loading="lazy" decoding="async" data-nimg="1" class="block duration-500" style="color:transparent" src="./images/image2.png"/>
-                        </div>
-                        <div class="img__container">
-                            <img alt="library photo" loading="lazy" decoding="async" data-nimg="1" class="block duration-500" style="color:transparent" src="./images/image3.png"/>
-                        </div>
-                    </div>
-                    <div class="about__photo-container-min">
-                        <span>
+                    <div class=about__photo>
+                        <span class="">
                             <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M15 7.5L9 12.5L15 17.5" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg> 
                         </span>
-                        <div class="img__container">
-                            <img alt="library photo" loading="lazy" decoding="async" data-nimg="1" class="block duration-500" style="color:transparent" src="./images/image1.png"/>
+                        <div class="about__photo-container">
+                            <div class="about__photo-wrapper">
+                                <div class="img__container">
+                                    <img alt="library photo" loading="lazy" decoding="async" data-nimg="1" class="block duration-500" style="color:transparent" src="./images/image1.png"/>
+                                </div>
+                                <div class="img__container">
+                                    <img alt="library photo" loading="lazy" decoding="async" data-nimg="1" class="block duration-500" style="color:transparent" src="./images/image2.png"/>
+                                </div>
+                                <div class="img__container">
+                                    <img alt="library photo" loading="lazy" decoding="async" data-nimg="1" class="block duration-500" style="color:transparent" src="./images/image3.png"/>
+                                </div>
+                                <div class="img__container">
+                                    <img alt="library photo" loading="lazy" decoding="async" data-nimg="1" class="block duration-500" style="color:transparent" src="./images/image4.png"/>
+                                </div>
+                                <div class="img__container">
+                                    <img alt="library photo" loading="lazy" decoding="async" data-nimg="1" class="block duration-500" style="color:transparent" src="./images/image5.png"/>
+                                </div>
+                            </div>
                         </div>
-                        <span>
+                        <span class="">
                             <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9 17.5L15 12.5L9 7.5" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg> 
                         </span>
                     </div>
-                    <ul class="about__radio-container">
-                        <li>
-                            <input type="radio" id="radio1" class="radio-input" name="about" checked="" value="1"/>
-                            <label tabindex="0" class="about__radio-label" for="radio1">
-                                <span class="about__label-span"></span>
-                            </label>
-                        </li>
-                        <li>
-                            <input type="radio" id="radio2" class="radio-input" name="about" value="2"/>
-                            <label tabindex="0" class="about__radio-label" for="radio2">
-                                <span class="about__label-span"></span>
-                            </label>
-                        </li>
-                        <li>
-                            <input type="radio" id="radio3" class="radio-input" name="about" value="3"/>
-                            <label tabindex="0" class="about__radio-label" for="radio3">
-                                <span class="about__label-span"></span>
-                            </label>
-                        </li>
-                    </ul>
-                    <ul class="about__radio-container-min">
-                        <li>
-                            <input type="radio" id="radio4" class="radio-input" name="about2" checked="" value="1"/>
-                            <label tabindex="0" class="about__radio-label" for="radio4">
-                                <span class="about__label-span"></span>
-                            </label>
-                        </li>
-                        <li>
-                            <input type="radio" id="radio5" class="radio-input" name="about2" value="2"/>
-                            <label tabindex="0" class="about__radio-label" for="radio5">
-                                <span class="about__label-span"></span>
-                            </label>
-                        </li>
-                        <li>
-                            <input type="radio" id="radio6" class="radio-input" name="about2" value="3"/>
-                            <label tabindex="0" class="about__radio-label" for="radio6">
-                                <span class="about__label-span"></span>
-                            </label>
-                        </li>
-                        <li>
-                            <input type="radio" id="radio7" class="radio-input" name="about2" value="4"/>
-                            <label tabindex="0" class="about__radio-label" for="radio7">
-                                <span class="about__label-span"></span>
-                            </label>
-                        </li>
-                        <li>
-                            <input type="radio" id="radio8" class="radio-input" name="about2" value="5"/>
-                            <label tabindex="0" class="about__radio-label" for="radio8">
-                                <span class="about__label-span"></span>
-                            </label>
-                        </li>
-                    </ul>
+                    <div class="about__photo-container-min">
+                        <ul class="about__radio-container"></ul>
+                    </div>
                 </section>
                 <section class="section">
                     <h2 id="1" class="main__h2">favorites</h2>
