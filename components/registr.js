@@ -62,8 +62,7 @@ export const registrMenu = () => {
         <path d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
         <path d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
       </svg>`,
-        className: 'registr__close',
-        id: 'close'
+        className: 'registr__close close',
     });
     registrContainer.append(registrH3, 
         registrLabelFirstName, 

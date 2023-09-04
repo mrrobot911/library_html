@@ -159,8 +159,17 @@ body {
       opacity: 1;
     }
 }
+.modal__wrapper {
+    position: fixed;
+    z-index: 10;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(142,142,142,0.5);
+}
 .registr__container {
-    position: absolute;
+    position: fixed;
     z-index: 20;
     width: 250px;
     height: 382px;
@@ -169,7 +178,9 @@ body {
     align-items: center;
     flex-direction: column;
     background: #FFF;
-    right: 20px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
 }
 .login__container h3,
 .registr__container h3{
@@ -247,7 +258,7 @@ body {
     right: 15px;
 }
 .login__container {
-    position: absolute;
+    position: fixed;
     z-index: 20;
     width: 250px;
     height: 262px;
@@ -256,7 +267,278 @@ body {
     align-items: center;
     flex-direction: column;
     background: #FFF;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.profile__container {
+    position: absolute;
+    z-index: 20;
+    width: 600px;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    background: #FFF;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.username__container {
+    height: 100%;
+    width: 170px;
+    flex-shrink: 0;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.username__container_initials {
+    color: #BB945F;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 100% */
+    text-transform: capitalize;
+    background-color: #FFF;
+    padding: 30px;
+}
+.username__container_username {
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    text-transform: capitalize;
+    background-color: #FFF;
+    padding: 5px 15px;
+}
+.userdata__container {
+    padding: 40px 20px;
+}
+.userdata__container h2 {
+    color: #000;
+    text-align: center;
+    font-family: Forum;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 50% */
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+.userdata__container_data {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+.userdata__container_dataElement{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.userdata__container_dataElement_title{
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 100% */
+    letter-spacing: 0.4px;
+    text-transform: capitalize;
+}
+.userdata__container_dataElement_data{
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 200% */
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+}
+.userdata__container h3 {
+    color: #0C0C0E;
+    font-family: Inter;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 80% */
+    margin-bottom: 30px;
+}
+.userdata__bookslist {
+    list-style-type: disc;
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 100% */
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+.userdata__card {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+.userdata__card_title {
+    color: #0C0C0E;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 100% */
+}
+.userdata__card_number {
+    color: #BB945F;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 100% */
+}
+.userdata__close {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+}
+.curdBuy__container {
+    position: absolute;
+    z-index: 20;
+    width: 650px;
+    height: 540px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: #FFF;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.curdBuy__container_title{
+    width: 650px;
+    height: 60px;
+    flex-shrink: 0;
+    background: #0C0C0E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.curdBuy__container_title h2{
+    color: #FFF;
+    font-family: Forum;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 50% */
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+.curdBuy__closeBtn{
+    position: absolute;
     right: 20px;
+    top: 25px;
+    color: #FFF;
+}
+.curdBuy__formContainer_content{
+    display: flex;
+    flex-direction: row;
+    margin: 30px 40px 40px 40px;
+    gap: 40px;
+}
+.curdBuy__formContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.curdBuy__formContainer_inputContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.curdBuy__formContainer_input{
+    width: 200px;
+    height: 20px;
+    flex-shrink: 0;
+    border: 1px solid #BB945F;
+    margin-top: 10px;
+}
+.curdBuy__formContainer_inputShort{
+    width: 45px;
+    height: 20px;
+    flex-shrink: 0;
+    border: 1px solid #BB945F;
+    margin-top: 10px;
+}
+.curdBuy__formContainer_label{
+    color: #000;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 133.333% */
+    letter-spacing: 0.3px;
+    display: flex;
+    flex-direction: column;
+}
+.curdBuy_label{
+    margin-top: 10px;
+}
+.curdBuy__container_form{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    margin-top: 10px;
+    align-items: end;
+}
+.curdBuy__container__submit{
+    color: #0C0C0E;
+    text-align: center;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    padding: 9px 27px;
+    border: #0C0C0E solid 1px;
+}
+.curdBuy__container_form p{
+    color: #0C0C0E;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 100% */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.curdBuy__container_text{
+    color: #8E8E8E;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 133.333% */
+    letter-spacing: 2px;
 }
 .menu__h2 {
     color: #000;

@@ -1,24 +1,19 @@
 import { menuOpen } from "./components/menu.js";
-import { userModal } from "./helpers/selectors.js";
+import { body, btn, favorites, fotoContainer, sliderRadioContainer, userModal } from "./helpers/selectors.js";
 import { resize } from "./helpers/helper.js";
+import { modalOpen } from "./helpers/modalOpen.js";
 
-const btn = document.querySelector("#burgerBtn");
-const test = document.querySelector(".menu");
-const body = document.querySelector(".body__container");
-const sliderRadioContainer = document.querySelector(".about__radio-container");
-const fotoContainer = document.querySelector(".about__photo-wrapper");
-const favorites = document.querySelector(".favorites__ul");
 let left = 0;
 let book = '';
-let {arrayRadio, windowSize} = resize(window.innerWidth);
+let { arrayRadio, _ } = resize(window.innerWidth);
 
 function func(e){
     (btn.checked === true && e.target !== btn && e.target !== test && e.target !== test.childNodes[1]) && (btn.checked = false);
 }
 body.addEventListener('click', func);
 window.addEventListener('resize', function() {
-    arrayRadio, windowSize = resize(windowSize);
-    resizeDom(arrayRadio);
+    let size = resize(window.innerWidth);
+    resizeDom(size.arrayRadio);
 }, true);
 
 const resizeDom = (arrayRadio) => {
@@ -45,9 +40,10 @@ const sliseBook = (e) => {
     console.log(book);
 }
 
-sliderRadioContainer.addEventListener('click', (e)=>sliseSlider(e));
-favorites.addEventListener('click', (e)=>sliseBook(e));
-userModal.addEventListener('click', (e)=>menuOpen(e));
+sliderRadioContainer.addEventListener('click', sliseSlider);
+favorites.addEventListener('click', sliseBook);
+userModal.addEventListener('click', menuOpen);
+body.addEventListener('click', modalOpen);
 
 
 

@@ -1,20 +1,12 @@
 import { createElement } from "../helpers/helper.js";
 import { userModal } from "../helpers/selectors.js";
-import { registrMenu } from "./registr.js";
-import { loginMenu } from "./login.js";
 
 let menu = true;
-export const menuOpen = (e) => {
+export const menuOpen = () => {
+
     menu = !menu;
-    if (e.target.id === 'registr'){
-        userModal.lastChild.remove();
-        const container = registrMenu();
-        userModal.append(container);
-    } else if (e.target.id === 'login') {
-        userModal.lastChild.remove();
-        const container = loginMenu();
-        userModal.append(container);
-    } else if (menu === false) {
+
+    if (menu === false) {
         const menuContainer = createElement('div', {
             className: 'menu__registr'
         });
@@ -36,7 +28,9 @@ export const menuOpen = (e) => {
             textContent: 'Register'
         });
         menuContainer.append(menuH2,menuHr,menuA1,menuA2);
+
         userModal.append(menuContainer);
+
     } else {
         userModal.lastChild.remove();
     }
