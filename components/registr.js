@@ -54,7 +54,8 @@ export const registrMenu = () => {
         textContent: 'Already have an account?'
     });
     const registrLink = createElement('a', {
-        textContent: 'Login'
+        textContent: 'Login',
+        id: 'login'
     });
     registrString.append(registrParagraf, registrLink);
     const registrExitButton = createElement('button', {

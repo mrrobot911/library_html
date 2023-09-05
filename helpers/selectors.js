@@ -5,3 +5,4 @@ export const btn = document.querySelector("#burgerBtn");
 export const test = document.querySelector(".menu");
 export const fotoContainer = document.querySelector(".about__photo-wrapper");
 export const favorites = document.querySelector(".favorites__ul");
+export const bookCards = document.querySelector(".favorites__cards");

@@ -1,4 +1,5 @@
 import { createElement } from "../helpers/helper.js";
+import { body } from "../helpers/selectors.js";
 
 export const loginMenu = () => {
     const registrContainer = createElement('div', {
@@ -37,7 +38,8 @@ export const loginMenu = () => {
         textContent: 'Don\’t have an account?'
     });
     const registrLink = createElement('a', {
-        textContent: 'Register'
+        textContent: 'Register',
+        id: 'registr'
     });
     registrString.append(registrParagraf, registrLink);
     const registrExitButton = createElement('button', {
@@ -53,5 +55,6 @@ export const loginMenu = () => {
         registrSubmitButton,
         registrString,
         registrExitButton);
+
     return registrContainer
 }

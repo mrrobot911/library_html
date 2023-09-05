@@ -11,10 +11,17 @@ export const modalOpen = (e) => {
             body.removeEventListener('click', modalEvent);
         }
     }
-    const wrapperContainer = createElement('div');
+    const wrapperContainer = createElement('div', {
+        className: 'modal__el'
+    });
     const wrapper = createElement('div', {
         className: 'modal__wrapper close'
     });
+
+    if(body.lastChild.className === 'modal__el' && (e.target.id ==='registr' || e.target.id === 'login')){
+        document.querySelector('.close').click();
+    };
+
     if (e.target.id === 'registr'){
         const container = registrMenu();
         wrapperContainer.append(container, wrapper);
