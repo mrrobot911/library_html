@@ -4,6 +4,7 @@ import { resize, sliseBook, sliseSlider } from "./helpers/helper.js";
 import { modalOpen } from "./helpers/modalOpen.js";
 import { resizeDom } from "./helpers/resizeDom.js";
 import { cards } from "./components/cards.js";
+import { submitModal } from "./helpers/submitModal.js";
 
 let { arrayRadio, _ } = resize(window.innerWidth);
 
@@ -20,6 +21,8 @@ resizeDom(arrayRadio);
 cards('Winter');
 
 sliderRadioContainer.addEventListener('click', sliseSlider);
-favorites.addEventListener('click', sliseBook);
+favorites.addEventListener('change', sliseBook);
 userModal.addEventListener('click', menuOpen);
 body.addEventListener('click', modalOpen);
+body.addEventListener('submit', submitModal);
+

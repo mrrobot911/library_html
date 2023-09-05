@@ -1,16 +1,17 @@
 import { createElement } from "../helpers/helper.js";
-import { body } from "../helpers/selectors.js";
 
 export const loginMenu = () => {
-    const registrContainer = createElement('div', {
-        className: 'login__container'
+    const registrContainer = createElement('form', {
+        className: 'login__container',
     });
     const registrH3 = createElement('h3', {
         textContent: 'Login'
     });
 
     const registrInputEmail = createElement('input', {
-        className: 'registr__input'
+        className: 'registr__input',
+        type: 'text',
+        name: 'email'
     });
     const registrLabelEmail = createElement('label', {
         className: 'registr__label',
@@ -19,7 +20,9 @@ export const loginMenu = () => {
     registrLabelEmail.append(registrInputEmail);
 
     const registrInputPassword = createElement('input', {
-        className: 'registr__input'
+        className: 'registr__input',
+        type: 'password',
+        name: 'password'
     });
     const registrLabelPassword = createElement('label', {
         className: 'registr__label',
@@ -27,9 +30,10 @@ export const loginMenu = () => {
     });
     registrLabelPassword.append(registrInputPassword);
 
-    const registrSubmitButton = createElement('button', {
-        className: 'registr__submit',
-        textContent: 'Log In'
+    const registrSubmitButton = createElement('input', {
+        type: 'submit',
+        className: 'login__submit',
+        value: 'Log In'
     });
     const registrString = createElement('div', {
         className: 'registr__menu-string'

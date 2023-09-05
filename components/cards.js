@@ -8,7 +8,7 @@ export const cards = async (season) => {
     const seasonArray = await fetchDB();
     const items = seasonArray[`${season}`].map(element => {
         const seasonArrayItem = document.createElement('article');
-        seasonArrayItem.className = "article";
+        seasonArrayItem.className = "article opacity";
         seasonArrayItem.insertAdjacentHTML('beforeend', `
         <h3 >Staff Picks</h3> 
         <h4 >${element.name}</h4>
@@ -19,6 +19,20 @@ export const cards = async (season) => {
         `);
         return seasonArrayItem
     });
-    bookCards.replaceChildren(...items);
+    if (bookCards.childNodes.length > 1) {
+        let flag = true;
+        bookCards.childNodes.forEach(el => el.className="article opacity");
+        setTimeout(() => {
+            bookCards.replaceChildren(...items);
+            flag = false;
+        }, 1000);
+        setTimeout(() => {
+            bookCards.childNodes.forEach(el => el.className="article");
+            flag = true;
+        }, 2000);
+    } else {
+        bookCards.replaceChildren(...items);
+        bookCards.childNodes.forEach(el => el.className="article");
+    }
     return bookCards
 }

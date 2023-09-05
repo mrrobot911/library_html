@@ -2,6 +2,7 @@ import { registrMenu } from "../components/registr.js";
 import { loginMenu } from "../components/login.js";
 import { createElement } from "./helper.js";
 import { body } from "./selectors.js";
+import { curdBuy } from "../components/curdBuy.js";
 
 export const modalOpen = (e) => {
     const modalEvent = (e) => {
@@ -32,5 +33,10 @@ export const modalOpen = (e) => {
         wrapperContainer.append(container, wrapper);
         body.append(wrapperContainer);
         body.addEventListener('click', modalEvent);
-    } 
+    } else if (e.target.className === 'article-btn') {
+        const container = curdBuy();
+        wrapperContainer.append(container, wrapper);
+        body.append(wrapperContainer);
+        body.addEventListener('click', modalEvent);
+    }
 }

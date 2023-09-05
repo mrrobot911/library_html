@@ -1,14 +1,16 @@
 import { createElement } from "../helpers/helper.js";
 
 export const registrMenu = () => {
-    const registrContainer = createElement('div', {
+    const registrContainer = createElement('form', {
         className: 'registr__container'
     });
     const registrH3 = createElement('h3', {
         textContent: 'Register'
     });
     const registrInputFirstName = createElement('input', {
-        className: 'registr__input'
+        className: 'registr__input',
+        type: 'text',
+        name: 'firstName'
     });
     const registrLabelFirstName = createElement('label', {
         className: 'registr__label',
@@ -17,7 +19,9 @@ export const registrMenu = () => {
     registrLabelFirstName.append(registrInputFirstName);
 
     const registrInputLastName = createElement('input', {
-        className: 'registr__input'
+        className: 'registr__input',
+        type: 'text',
+        name: 'lastName'
     });
     const registrLabelLastName = createElement('label', {
         className: 'registr__label',
@@ -26,7 +30,9 @@ export const registrMenu = () => {
     registrLabelLastName.append(registrInputLastName);
 
     const registrInputEmail = createElement('input', {
-        className: 'registr__input'
+        className: 'registr__input',
+        type: 'email',
+        name: 'email'
     });
     const registrLabelEmail = createElement('label', {
         className: 'registr__label',
@@ -35,7 +41,9 @@ export const registrMenu = () => {
     registrLabelEmail.append(registrInputEmail);
 
     const registrInputPassword = createElement('input', {
-        className: 'registr__input'
+        className: 'registr__input',
+        type: 'password',
+        name: 'password'
     });
     const registrLabelPassword = createElement('label', {
         className: 'registr__label',
@@ -43,9 +51,10 @@ export const registrMenu = () => {
     });
     registrLabelPassword.append(registrInputPassword);
 
-    const registrSubmitButton = createElement('button', {
+    const registrSubmitButton = createElement('input', {
+        type: 'submit',
         className: 'registr__submit',
-        textContent: 'Sign Up'
+        value: 'Sign Up'
     });
     const registrString = createElement('div', {
         className: 'registr__menu-string'
