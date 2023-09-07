@@ -3,6 +3,7 @@ import { loginMenu } from "../components/login.js";
 import { createElement } from "./helper.js";
 import { body } from "./selectors.js";
 import { curdBuy } from "../components/curdBuy.js";
+import { profileUser } from "../components/profile.js";
 
 export const modalOpen = (e) => {
     const modalEvent = (e) => {
@@ -30,6 +31,11 @@ export const modalOpen = (e) => {
         body.addEventListener('click', modalEvent);
     } else if (e.target.id === 'login') {
         const container = loginMenu();
+        wrapperContainer.append(container, wrapper);
+        body.append(wrapperContainer);
+        body.addEventListener('click', modalEvent);
+    } else if (e.target.id === 'profile'){
+        const container = profileUser();
         wrapperContainer.append(container, wrapper);
         body.append(wrapperContainer);
         body.addEventListener('click', modalEvent);

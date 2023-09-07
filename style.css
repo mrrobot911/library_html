@@ -274,7 +274,7 @@ body {
     transform: translate(-50%,-50%);
 }
 .profile__container {
-    position: absolute;
+    position: fixed;
     z-index: 20;
     width: 600px;
     height: 400px;
@@ -340,6 +340,12 @@ body {
     margin-bottom: 20px;
     gap: 20px;
 }
+.userdata__container_dataSmall {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    gap: 20px;
+}
 .userdata__container_dataElement{
     display: flex;
     flex-direction: column;
@@ -357,6 +363,9 @@ body {
     line-height: 20px; /* 100% */
     letter-spacing: 0.4px;
     text-transform: capitalize;
+}
+.userdata_small {
+    font-size: 10px;
 }
 .userdata__container_dataElement_data{
     color: #000;
@@ -1073,6 +1082,20 @@ body {
     margin-bottom: 23px;
     padding: 8px 20px;
     border-radius: 10px;
+}
+#form__container-p {
+    font-family: Forum;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px;
+    letter-spacing: 0.6px;
+    width: 400px;
+    margin-bottom: 23px;
+    padding: 8px 20px;
+    border-radius: 10px;
+    color: #BB945F;
+    background-color: #FFF;
 }
 .submit__btn {
     color: #0C0C0E;

@@ -6,3 +6,6 @@ export const test = document.querySelector(".menu");
 export const fotoContainer = document.querySelector(".about__photo-wrapper");
 export const favorites = document.querySelector(".favorites__ul");
 export const bookCards = document.querySelector(".favorites__cards");
+export const futerMenu = document.querySelector(".card__get");
+export const icon = document.querySelector("#user__img");
+export const findCardElem = document.querySelector('.card__find-container');

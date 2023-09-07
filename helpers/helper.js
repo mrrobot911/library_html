@@ -26,8 +26,8 @@ export const sliseSlider = (e) => {
     return fotoContainer
 }
 
-export const sliseBook = async(e) => {
+export const sliseBook = (e) => {
     let book = '';
     book = e.target.value;
-    await cards(book);
+    cards(book);
 }

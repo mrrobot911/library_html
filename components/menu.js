@@ -5,7 +5,7 @@ let menu = true;
 export const menuOpen = () => {
 
     menu = !menu;
-
+    const flag = localStorage.getItem('flag');
     if (menu === false) {
         const menuContainer = createElement('div', {
             className: 'menu__registr'
@@ -17,18 +17,32 @@ export const menuOpen = () => {
         const menuHr = createElement('hr', {
             className: 'menu__hr'
         });
-        const menuA1 = createElement('a', {
-            id: 'login',
-            className: 'menu__a',
-            textContent: 'Log In'
-        });
-        const menuA2 = createElement('a', {
-            id: 'registr',
-            className: 'menu__a',
-            textContent: 'Register'
-        });
-        menuContainer.append(menuH2,menuHr,menuA1,menuA2);
-
+        menuContainer.append(menuH2,menuHr);
+        if (flag === "false") {       
+            const menuA1 = createElement('a', {
+                id: 'login',
+                className: 'menu__a',
+                textContent: 'Log In'
+            });
+            const menuA2 = createElement('a', {
+                id: 'registr',
+                className: 'menu__a',
+                textContent: 'Register'
+            });
+            menuContainer.append(menuA1,menuA2);
+        } else {
+            const menuA1 = createElement('a', {
+                id: 'profile',
+                className: 'menu__a',
+                textContent: 'My profile'
+            });
+            const menuA2 = createElement('a', {
+                id: 'logout',
+                className: 'menu__a',
+                textContent: 'Log Out'
+            });
+            menuContainer.append(menuA1,menuA2);
+        }
         userModal.append(menuContainer);
 
     } else {
