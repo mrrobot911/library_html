@@ -1,5 +1,6 @@
 import { findCardContainer } from "../components/findCardContainer.js";
 import { getCardsMenu } from "../components/getCardsMenu.js";
+import { userAvatar } from "../components/userAvatar.js";
 import { User } from "../db/user.js";
 
 export const submitModal = (e, users) => {
@@ -12,7 +13,9 @@ export const submitModal = (e, users) => {
         users.length > 0 && users.forEach(el => {
             if (el.hasOwnProperty('Email') && el.Email === formData.get('email')){
                 flag = true;
+                localStorage.setItem('user', users.indexOf(el));
                 localStorage.setItem('flag', flag);
+                userAvatar();
                 findCardContainer();
                 getCardsMenu();
             }

@@ -1,5 +1,5 @@
 import { cards } from "../components/cards.js";
-import { fotoContainer } from "./selectors.js";
+import { body, fotoContainer, userModal } from "./selectors.js";
 
 export const createElement = (tagName,attr) => {
     const elem = document.createElement(tagName);
@@ -30,4 +30,12 @@ export const sliseBook = (e) => {
     let book = '';
     book = e.target.value;
     cards(book);
+}
+export const modalMenuEvent = (e) => {
+    if (e.target.closest('.close')) 
+    {
+        userModal.lastChild.remove();
+        body.lastChild.remove();
+        body.removeEventListener('click', modalMenuEvent);
+    }
 }

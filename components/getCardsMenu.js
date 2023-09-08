@@ -4,10 +4,10 @@ import { futerMenu } from "../helpers/selectors.js";
 export const getCardsMenu = () => {
     const flag = localStorage.getItem('flag');
     const title = createElement('h4', {
-        textContent: flag === false ? "Get a reader card" : "Visit your profile"
+        textContent: flag === 'false' ? "Get a reader card" : "Visit your profile"
     });
     const paragraf = createElement('p', {
-        textContent: flag === false 
+        textContent: flag === 'false' 
         ? "You will be able to see a reader card after logging into account or you can register a new account"
         : "With a digital library card you get free access to the Library\’s wide array of digital resources including e-books, databases, educational resources, and more."
     });

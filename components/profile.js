@@ -2,6 +2,9 @@ import { createElement } from "../helpers/helper.js";
 import { profileData } from "./profileData.js";
 
 export const profileUser = () => {
+    const userId = localStorage.getItem('user');
+    const db = JSON.parse(localStorage.getItem('users'));
+
     const array = [['The Last Queen', 'Clive Irving'],['Dominicana', 'Angie Cruz']];
     const profileContainer = createElement('div', {
         className: 'profile__container'
@@ -11,11 +14,11 @@ export const profileUser = () => {
     });
     const profileInitials = createElement('p', {
         className: 'username__container_initials',
-        textContent: 'JD'
+        textContent: `${db[userId].firstName[0].toUpperCase()}${db[userId].lastName[0].toUpperCase()}`
     });
     const profileUsername = createElement('p', {
         className: 'username__container_username',
-        textContent: 'John Doe'
+        textContent: `${db[userId].firstName.toUpperCase()[0] + db[userId].firstName.toLowerCase().slice(1)} ${db[userId].lastName.toUpperCase()[0] + db[userId].lastName.toLowerCase().slice(1)}`
     });
     profileUsernameContainer.append(profileInitials, profileUsername);
 

@@ -1,5 +1,5 @@
 import { menuOpen } from "./components/menu.js";
-import { body, btn, favorites, sliderRadioContainer, userModal } from "./helpers/selectors.js";
+import { body, btn, favorites, sliderRadioContainer } from "./helpers/selectors.js";
 import { resize, sliseBook, sliseSlider } from "./helpers/helper.js";
 import { modalOpen } from "./helpers/modalOpen.js";
 import { resizeDom } from "./helpers/resizeDom.js";
@@ -7,6 +7,7 @@ import { cards } from "./components/cards.js";
 import { submitModal } from "./helpers/submitModal.js";
 import { getCardsMenu } from "./components/getCardsMenu.js";
 import { findCardContainer } from "./components/findCardContainer.js";
+import { userAvatar } from "./components/userAvatar.js";
 
 let { arrayRadio, _ } = resize(window.innerWidth);
 const temp = localStorage.getItem('users');
@@ -23,12 +24,13 @@ window.addEventListener('resize', function() {
 
 resizeDom(arrayRadio);
 cards('Winter');
+userAvatar();
 findCardContainer();
 getCardsMenu();
 
 sliderRadioContainer.addEventListener('click', sliseSlider);
 favorites.addEventListener('change', sliseBook);
-userModal.addEventListener('click', menuOpen);
+body.addEventListener('click', menuOpen);
 body.addEventListener('click', modalOpen);
 body.addEventListener('submit', (e)=>submitModal(e, users));
 

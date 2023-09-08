@@ -9,3 +9,4 @@ export const bookCards = document.querySelector(".favorites__cards");
 export const futerMenu = document.querySelector(".card__get");
 export const icon = document.querySelector("#user__img");
 export const findCardElem = document.querySelector('.card__find-container');
+export const userAvatarLogo = document.querySelector('.nav__img');
