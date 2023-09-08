@@ -1,6 +1,6 @@
 import { registrMenu } from "../components/registr.js";
 import { loginMenu } from "../components/login.js";
-import { createElement, modalEvent } from "./helper.js";
+import { buyTheBook, createElement, modalEvent } from "./helper.js";
 import { body } from "./selectors.js";
 import { curdBuy } from "../components/curdBuy.js";
 import { profileUser } from "../components/profile.js";
@@ -43,8 +43,10 @@ export const modalOpen = (e) => {
         findCardContainer();
         getCardsMenu();
     } else if (e.target.className === 'article-btn') {
-        const container = user ? curdBuy() : loginMenu();
-        wrapperContainer.append(container, wrapper);
+        const db = JSON.parse(localStorage.getItem('users'));
+        const flag = user ? JSON.parse(db[user].hasCard) : false;
+        const container = flag ? buyTheBook(e) : user ? curdBuy() : loginMenu();
+        flag ? wrapperContainer.append(container) : wrapperContainer.append(container, wrapper);
         body.append(wrapperContainer);
         body.addEventListener('click', modalEvent);
     }

@@ -4,12 +4,12 @@ import { futerMenu } from "../helpers/selectors.js";
 export const getCardsMenu = () => {
     const user = localStorage.getItem('user');
     const title = createElement('h4', {
-        textContent: user ? "Get a reader card" : "Visit your profile"
+        textContent: user ? "Visit your profile" : "Get a reader card"
     });
     const paragraf = createElement('p', {
         textContent: user 
-        ? "You will be able to see a reader card after logging into account or you can register a new account"
-        : "With a digital library card you get free access to the Library\’s wide array of digital resources including e-books, databases, educational resources, and more."
+        ? "With a digital library card you get free access to the Library\’s wide array of digital resources including e-books, databases, educational resources, and more."
+        : "You will be able to see a reader card after logging into account or you can register a new account"
     });
     const container = createElement('div');
     const cardContainer = createElement('div', {

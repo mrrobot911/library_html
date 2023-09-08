@@ -6,6 +6,7 @@ export class User {
     Books = [];
     visits = 0;
     cardNumber = 0;
+    hasCard = false;
     set firstName(firstName){
         this.firstName = firstName;
     }
@@ -26,6 +27,9 @@ export class User {
     }
     set cardNumber(cardNumber){
         this.cardNumber = cardNumber;
+    }
+    set hasCard(hasCard){
+        this.hasCard = hasCard;
     }
     constructor(){
     }

@@ -1,5 +1,5 @@
 import { cards } from "../components/cards.js";
-import { body, fotoContainer, userModal } from "./selectors.js";
+import { body, btn, fotoContainer, userModal } from "./selectors.js";
 
 export const createElement = (tagName,attr) => {
     const elem = document.createElement(tagName);
@@ -52,5 +52,22 @@ export const visitsCount = () => {
     const user = db[userId];
     user.visits += 1;
     db[userId] = user;
+    localStorage.setItem('users', JSON.stringify(db));
+}
+export const randomNumber = (length) => {
+        const number = Math.floor(Math.pow(10, length-1) + Math.random() * (Math.pow(10, length) - Math.pow(10, length-1) - 1)).toString(16);
+        return number.length < 9 ? '0'.repeat(9 - number.length) + number : number
+}
+export function checkButton(e){
+    (btn.checked === true && e.target !== btn && e.target !== test && e.target !== test.childNodes[1]) && (btn.checked = false);
+}
+export const buyTheBook = (e) => {
+    const userId = localStorage.getItem('user');
+    const db = JSON.parse(localStorage.getItem('users'));
+    e.target.className = 'own';
+    e.target.textContent = 'Own';
+    const name = e.target.parentElement.childNodes[3].textContent;
+    const author = e.target.parentElement.childNodes[5].textContent;
+    db[userId].Books.push([name, author.slice(3)]);
     localStorage.setItem('users', JSON.stringify(db));
 }

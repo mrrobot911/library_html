@@ -5,7 +5,7 @@ export const profileUser = () => {
     const userId = localStorage.getItem('user');
     const db = JSON.parse(localStorage.getItem('users'));
 
-    const array = [['The Last Queen', 'Clive Irving'],['Dominicana', 'Angie Cruz']];
+    const array = db[userId].Books;
     const profileContainer = createElement('div', {
         className: 'profile__container'
     });
@@ -50,7 +50,7 @@ export const profileUser = () => {
         className: 'userdata__card_title'
     });
     const profileCardNumber = createElement('p', {
-        textContent: 'F00234030',
+        textContent: db[userId].cardNumber,
         className: 'userdata__card_number'
     });
     const profileCardImg = createElement('p', {

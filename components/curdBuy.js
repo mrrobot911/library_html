@@ -19,7 +19,7 @@ export const curdBuy = () => {
     })
     curdBuyTitle.append(curdBuyTitleH2, curdBuyClose);
 
-    const curdBuyFormContent = createElement('div', {
+    const curdBuyFormContent = createElement('form', {
         className: 'curdBuy__formContainer_content'
     });
     const curdBuyForm = createElement('div', {
@@ -91,9 +91,10 @@ export const curdBuy = () => {
     const curdBuyFormSubmit = createElement('div', {
         className: 'curdBuy__container_form'
     });
-    const curdBuyFormSubmitButton = createElement('button', {
+    const curdBuyFormSubmitButton = createElement('input', {
+        type: 'submit',
         className: 'curdBuy__container__submit',
-        textContent: 'Buy'
+        value: 'Buy'
     });
     const curdBuyFormSubmitSum = createElement('p', {
         textContent: '$ 25.00'

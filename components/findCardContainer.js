@@ -35,7 +35,7 @@ export const findCardContainer = () => {
         });
         const findCardInputNumber = createElement('input', {
             type: 'text',
-            placeholder: 'Reader\'s name'
+            placeholder: 'Card number'
         });
         findCardContainer.append(findCardInputName, findCardInputNumber);
     }

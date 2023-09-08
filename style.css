@@ -336,6 +336,8 @@ body {
     text-transform: capitalize;
     background-color: #FFF;
     padding: 5px 15px;
+    margin: 0px 25px;
+    text-align: center;
 }
 .userdata__container {
     padding: 40px 20px;
@@ -874,7 +876,7 @@ body {
     background-color: #BB945F;
     border: 1px solid #BB945F;
 }
-#own{
+.own{
     position: absolute;
     color: #BB945F;
     text-align: center;
