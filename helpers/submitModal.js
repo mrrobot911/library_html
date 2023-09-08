@@ -2,6 +2,7 @@ import { findCardContainer } from "../components/findCardContainer.js";
 import { getCardsMenu } from "../components/getCardsMenu.js";
 import { userAvatar } from "../components/userAvatar.js";
 import { User } from "../db/user.js";
+import { visitsCount } from "./helper.js";
 
 export const submitModal = (e, users) => {
     let flag = false;
@@ -14,10 +15,10 @@ export const submitModal = (e, users) => {
             if (el.hasOwnProperty('Email') && el.Email === formData.get('email')){
                 flag = true;
                 localStorage.setItem('user', users.indexOf(el));
-                localStorage.setItem('flag', flag);
                 userAvatar();
                 findCardContainer();
                 getCardsMenu();
+                visitsCount();
             }
         })
     } else {
@@ -29,5 +30,7 @@ export const submitModal = (e, users) => {
         users.push(userData);
         localStorage.setItem('users', JSON.stringify(users));
     }
-    document.querySelector('.close').click();
+
+    const closeEl = document.querySelector('.close');
+    closeEl && closeEl.click();
 }

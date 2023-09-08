@@ -3,9 +3,11 @@ import { findCardElem } from "../helpers/selectors.js";
 import { profileData } from "./profileData.js";
 
 export const findCardContainer = () => {
-    const flag = localStorage.getItem('flag');
+    const userId = localStorage.getItem('user');
+    const db = JSON.parse(localStorage.getItem('users'));
+
     const findCardH3 = createElement('h3', {
-        textContent: flag === 'false' ? 'Find your Library card' : 'Your Library card'
+        textContent: !userId ? 'Find your Library card' : 'Your Library card'
     });
     const findCardForm = createElement('form');
     const findCardContainer = createElement('div', {
@@ -15,7 +17,18 @@ export const findCardContainer = () => {
         textContent: 'Brooklyn Public Library'
     });
     findCardContainer.append(findCardParagraf);
-    if (flag === 'false'){
+    
+    if (userId){
+        const findCardInputName = createElement('p', {
+            textContent: `${db[userId].firstName.toUpperCase()[0] + db[userId].firstName.toLowerCase().slice(1)} ${db[userId].lastName.toUpperCase()[0] + db[userId].lastName.toLowerCase().slice(1)}`,
+            id: 'form__container-p'
+        });
+        const findCardInputNumber = createElement('p', {
+            textContent: `${db[userId].cardNumber}`,
+            id: 'form__container-p'
+        });
+        findCardContainer.append(findCardInputName, findCardInputNumber);
+    } else {
         const findCardInputName = createElement('input', {
             type: 'text',
             placeholder: 'Reader\'s name'
@@ -25,26 +38,16 @@ export const findCardContainer = () => {
             placeholder: 'Reader\'s name'
         });
         findCardContainer.append(findCardInputName, findCardInputNumber);
-    } else {
-        const findCardInputName = createElement('p', {
-            textContent: 'John Doe',
-            id: 'form__container-p'
-        });
-        const findCardInputNumber = createElement('p', {
-            textContent: '777',
-            id: 'form__container-p'
-        });
-        findCardContainer.append(findCardInputName, findCardInputNumber);
     }
-    if (flag === 'false'){
-    const formSubmit = createElement('input', {
-        type: 'submit',
-        className: 'submit__btn',
-        value: 'Check the card'
-    });
-    findCardForm.append(findCardContainer, formSubmit);
-    } else {
+    if (userId){
         const formSubmit = profileData(true);
+        findCardForm.append(findCardContainer, formSubmit);
+    } else {
+        const formSubmit = createElement('input', {
+            type: 'submit',
+            className: 'submit__btn',
+            value: 'Check the card'
+        });
         findCardForm.append(findCardContainer, formSubmit);
     } 
     findCardElem.replaceChildren(findCardH3, findCardForm);

@@ -1,6 +1,6 @@
 import { menuOpen } from "./components/menu.js";
 import { body, btn, favorites, sliderRadioContainer } from "./helpers/selectors.js";
-import { resize, sliseBook, sliseSlider } from "./helpers/helper.js";
+import { resize, sliseBook, sliseSlider, visitsCount } from "./helpers/helper.js";
 import { modalOpen } from "./helpers/modalOpen.js";
 import { resizeDom } from "./helpers/resizeDom.js";
 import { cards } from "./components/cards.js";
@@ -12,7 +12,8 @@ import { userAvatar } from "./components/userAvatar.js";
 let { arrayRadio, _ } = resize(window.innerWidth);
 const temp = localStorage.getItem('users');
 const users = (temp == null) ? [] : JSON.parse(temp);
-localStorage.setItem('flag', false);
+const user = localStorage.getItem('user');
+user && visitsCount();
 function func(e){
     (btn.checked === true && e.target !== btn && e.target !== test && e.target !== test.childNodes[1]) && (btn.checked = false);
 }

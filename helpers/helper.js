@@ -39,3 +39,18 @@ export const modalMenuEvent = (e) => {
         body.removeEventListener('click', modalMenuEvent);
     }
 }
+export const modalEvent = (e) => {
+    if (e.target.closest('.close')) 
+    {
+        body.lastChild.remove();
+        body.removeEventListener('click', modalEvent);
+    }
+}
+export const visitsCount = () => {
+    const userId = localStorage.getItem('user');
+    const db = JSON.parse(localStorage.getItem('users'));
+    const user = db[userId];
+    user.visits += 1;
+    db[userId] = user;
+    localStorage.setItem('users', JSON.stringify(db));
+}

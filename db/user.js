@@ -4,6 +4,8 @@ export class User {
     Email = '';
     Password = '';
     Books = [];
+    visits = 0;
+    cardNumber = 0;
     set firstName(firstName){
         this.firstName = firstName;
     }
@@ -18,6 +20,12 @@ export class User {
     }
     set Books(Books) {
         this.Books = Books;
+    }
+    set visits(visits){
+        this.visits = visits;
+    }
+    set cardNumber(cardNumber){
+        this.cardNumber = cardNumber;
     }
     constructor(){
     }

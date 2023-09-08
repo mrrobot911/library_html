@@ -1,6 +1,8 @@
 import { createElement } from "../helpers/helper.js";
 
 export const profileData = (flag) => {
+    const userId = localStorage.getItem('user');
+    const db = JSON.parse(localStorage.getItem('users'));
 
     const profileUserdata = createElement('div', {
         className: flag ? 'userdata__container_dataSmall' : 'userdata__container_data'
@@ -18,7 +20,7 @@ export const profileData = (flag) => {
       </svg>`
     });
     const profileVisitsNumber = createElement('p', {
-        textContent: '23',
+        textContent: db[userId].visits,
         className: 'userdata__container_dataElement_data'
     });
     profileUserdataVisits.append(profileVisits, profileVisitsImg, profileVisitsNumber);
@@ -56,7 +58,7 @@ export const profileData = (flag) => {
       </svg>`
     });
     const profileBooksNumber = createElement('p', {
-        textContent: '2',
+        textContent: db[userId].Books.length,
         className: 'userdata__container_dataElement_data'
     });
     profileUserdataBooks.append(profileBooks, profileBooksImg, profileBooksNumber);
