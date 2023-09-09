@@ -27,7 +27,10 @@ export const curdBuy = () => {
     });
 
     const curdBuyFormNumberInput = createElement('input', {
-        className: 'curdBuy__formContainer_input'
+        className: 'curdBuy__formContainer_input',
+        pattern: "[0-9]{16}",
+        required: true,
+        maxLength: "16"
     });
     const curdBuyFormNumberLabel = createElement('label', {
         className: 'curdBuy__formContainer_label',
@@ -39,10 +42,16 @@ export const curdBuy = () => {
         className: 'curdBuy__formContainer_inputContainer'
     });
     const curdBuyFormCodeInput1 = createElement('input', {
-        className: 'curdBuy__formContainer_inputShort'
+        className: 'curdBuy__formContainer_inputShort',
+        pattern: "[0-9]{2}",
+        required: true,
+        maxLength: "2"
     });
     const curdBuyFormCodeInput2 = createElement('input', {
-        className: 'curdBuy__formContainer_inputShort'
+        className: 'curdBuy__formContainer_inputShort',
+        pattern: "[0-9]{2}",
+        required: true,
+        maxLength: "2"
     });
     curdBuyFormContentInputContainer.append(curdBuyFormCodeInput1, curdBuyFormCodeInput2);
 
@@ -53,7 +62,10 @@ export const curdBuy = () => {
     curdBuyFormCodeLabel.append(curdBuyFormContentInputContainer);
 
     const curdBuyFormCVCInput = createElement('input', {
-        className: 'curdBuy__formContainer_inputShort'
+        className: 'curdBuy__formContainer_inputShort',
+        pattern: "[0-9]{3}",
+        required: true,
+        maxLength: "3"
     });
     const curdBuyFormCVCLabel = createElement('label', {
         className: 'curdBuy__formContainer_label',
@@ -62,7 +74,8 @@ export const curdBuy = () => {
     curdBuyFormCVCLabel.append(curdBuyFormCVCInput);
 
     const curdBuyFormCardholderInput = createElement('input', {
-        className: 'curdBuy__formContainer_input'
+        className: 'curdBuy__formContainer_input',
+        required: true
     });
     const curdBuyFormCardholderLabel = createElement('label', {
         className: 'curdBuy__formContainer_label curdBuy_label',
@@ -71,7 +84,8 @@ export const curdBuy = () => {
     curdBuyFormCardholderLabel.append(curdBuyFormCardholderInput);
 
     const curdBuyFormPostalInput = createElement('input', {
-        className: 'curdBuy__formContainer_input'
+        className: 'curdBuy__formContainer_input',
+        required: true
     });
     const curdBuyFormPostalLabel = createElement('label', {
         className: 'curdBuy__formContainer_label',
@@ -80,7 +94,8 @@ export const curdBuy = () => {
     curdBuyFormPostalLabel.append(curdBuyFormPostalInput);
 
     const curdBuyFormCityInput = createElement('input', {
-        className: 'curdBuy__formContainer_input'
+        className: 'curdBuy__formContainer_input',
+        required: true
     });
     const curdBuyFormCityLabel = createElement('label', {
         className: 'curdBuy__formContainer_label',

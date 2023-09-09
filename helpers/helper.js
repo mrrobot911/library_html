@@ -1,5 +1,5 @@
 import { cards } from "../components/cards.js";
-import { body, btn, fotoContainer, userModal } from "./selectors.js";
+import { body, btn, fotoContainer, leftBtn, rightBtn, test, userModal } from "./selectors.js";
 
 export const createElement = (tagName,attr) => {
     const elem = document.createElement(tagName);
@@ -70,4 +70,19 @@ export const buyTheBook = (target) => {
     const author = target.parentElement.childNodes[5].textContent;
     db[userId].Books.push([name, author.slice(3)]);
     localStorage.setItem('users', JSON.stringify(db));
+}
+export const copyToClip = (e) => {
+    if (e.target.closest('.copyNumber')){
+        navigator.clipboard.writeText(e.target.closest('.copyNumber').parentElement.childNodes[1].textContent);
+    }
+}
+export const sliderMove = (e) => {
+    const position = parseInt(fotoContainer.style.left);
+
+    if (e.target.closest('.btn__left') && position < 0) {
+        fotoContainer.style.left=`${position + 475}px`
+    } else if (e.target.closest('.btn__right') && position > -1900) {
+        fotoContainer.style.left=`${position - 475}px`
+    }
+    return fotoContainer, leftBtn, rightBtn
 }

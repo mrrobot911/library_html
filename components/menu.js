@@ -8,6 +8,7 @@ export const menuOpen = (e) => {
         && e.target.className !== 'menu__h2' 
         && e.target.className !== 'menu__a') {
     const user = localStorage.getItem('user');
+    const db = JSON.parse(localStorage.getItem('users'));
 
     const wrapper = createElement('div', {
         className: 'modal__wrapper-clear close'
@@ -17,7 +18,7 @@ export const menuOpen = (e) => {
     });
     const menuH2 = createElement('h2',{
         className: 'menu__h2',
-        textContent: 'Profile'
+        textContent: user ? db[user].cardNumber : 'Profile'
     });
     const menuHr = createElement('hr', {
         className: 'menu__hr'

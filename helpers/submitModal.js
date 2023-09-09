@@ -15,7 +15,9 @@ export const submitModal = (e, users) => {
 
     if (e.target.className === 'login__container'){
         users.length > 0 && users.forEach(el => {
-            if (el.hasOwnProperty('Email') && el.Email === formData.get('email') || el.hasOwnProperty('cardNumber') && el.cardNumber === formData.get('email')){
+            if ((el.hasOwnProperty('Email') && el.Email === formData.get('email') 
+            || el.hasOwnProperty('cardNumber') && el.cardNumber === formData.get('email'))
+            && el.hasOwnProperty('Password') && el.Password === formData.get('password') ){
                 flag = true;
                 localStorage.setItem('user', users.indexOf(el));
                 userAvatar();

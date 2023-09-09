@@ -10,7 +10,8 @@ export const registrMenu = () => {
     const registrInputFirstName = createElement('input', {
         className: 'registr__input',
         type: 'text',
-        name: 'firstName'
+        name: 'firstName',
+        required: true
     });
     const registrLabelFirstName = createElement('label', {
         className: 'registr__label',
@@ -21,7 +22,8 @@ export const registrMenu = () => {
     const registrInputLastName = createElement('input', {
         className: 'registr__input',
         type: 'text',
-        name: 'lastName'
+        name: 'lastName',
+        required: true
     });
     const registrLabelLastName = createElement('label', {
         className: 'registr__label',
@@ -32,7 +34,8 @@ export const registrMenu = () => {
     const registrInputEmail = createElement('input', {
         className: 'registr__input',
         type: 'email',
-        name: 'email'
+        name: 'email',
+        required: true
     });
     const registrLabelEmail = createElement('label', {
         className: 'registr__label',
@@ -43,7 +46,9 @@ export const registrMenu = () => {
     const registrInputPassword = createElement('input', {
         className: 'registr__input',
         type: 'password',
-        name: 'password'
+        name: 'password',
+        pattern: ".{8,20}",
+        required: true
     });
     const registrLabelPassword = createElement('label', {
         className: 'registr__label',

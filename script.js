@@ -1,6 +1,6 @@
 import { menuOpen } from "./components/menu.js";
 import { body, favorites, sliderRadioContainer } from "./helpers/selectors.js";
-import { checkButton, resize, sliseBook, sliseSlider, visitsCount } from "./helpers/helper.js";
+import { checkButton, copyToClip, resize, sliderMove, sliseBook, sliseSlider, visitsCount } from "./helpers/helper.js";
 import { modalOpen } from "./helpers/modalOpen.js";
 import { resizeDom } from "./helpers/resizeDom.js";
 import { cards } from "./components/cards.js";
@@ -31,4 +31,6 @@ favorites.addEventListener('change', sliseBook);
 body.addEventListener('click', menuOpen);
 body.addEventListener('click', (e)=>modalOpen(e.target));
 body.addEventListener('submit', (e)=>submitModal(e, users));
+body.addEventListener('click', copyToClip);
+body.addEventListener('click', sliderMove);
 

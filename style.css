@@ -408,7 +408,9 @@ body {
     margin-bottom: 30px;
 }
 .userdata__bookslist {
+    max-height: 50px;
     list-style-type: disc;
+    list-style-position: inside;
     color: #000;
     font-family: Inter;
     font-size: 20px;
@@ -422,6 +424,7 @@ body {
     flex-direction: column;
     gap: 10px;
     margin-bottom: 40px;
+    overflow-y: scroll;
 }
 .userdata__card {
     display: flex;
@@ -731,11 +734,18 @@ body {
     font-size: 20px;
     font-weight: 700; 
 }
+.book_section {
+    position: relative;
+}
 .favorites__ul {
+    position: inherit;
+    top: 30px;
     justify-content: flex-start;
     display: flex;
     margin: 40px 0px;
     gap: 54px;
+    background-color: #FFF;
+    z-index: 20;
 }
 .favorites__ul li {
     width: 140px;
@@ -1275,6 +1285,17 @@ body {
 .slider__btn{
     display: none;
 }
+.slider__btn :hover{
+    color: #BB945F;
+}
+.btn__left {
+    margin-right: 58px;
+    cursor: pointer;
+}
+.btn__right {
+    margin-left: 58px;
+    cursor: pointer;
+}
 @media (max-width: 1280px) {
     .favorites__cards{
         display: flex;
@@ -1412,6 +1433,9 @@ body {
     .toggler:checked ~ .menu > ul > li > a:hover{
         color: #BB945F;
     }
+    .menu__registr {
+        right: 100px;
+    }
 }
 @media (max-width: 768px ) {
     .about__photo-container {
@@ -1429,6 +1453,9 @@ body {
     }
     .slider__btn {
         display: block;
+    }
+    .favorites__ul{
+        position: sticky;
     }
 }
 @media (max-width: 685px ){

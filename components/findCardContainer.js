@@ -4,7 +4,6 @@ import { profileData } from "./profileData.js";
 
 export const findCardContainer = (userId) => {
     const db = JSON.parse(localStorage.getItem('users'));
-    console.log(userId);
 
     const findCardH3 = createElement('h3', {
         textContent: !userId ? 'Find your Library card' : 'Your Library card'
