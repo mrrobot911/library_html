@@ -45,7 +45,7 @@ export const submitModal = (e, users) => {
         let fullName = [];
         formData.has('username') && (fullName = formData.get('username').split(' '));
         formData.has('curdnumber') && (userData.cardNumber = formData.get('curdnumber'));
-        const res = db.filter(el => el.firstName.match(fullName[0]) && el.lastName.match(fullName[1]) && el.cardNumber.match(userData.cardNumber));
+        const res = db.filter(el => el.firstName.match(fullName[0]) && el.lastName.match(fullName[1]) && el.cardNumber.match(userData.cardNumber)) | [];
         if (res.length > 0) {
             findCardContainer(db.indexOf(res[0]).toString());
             setTimeout(()=>findCardContainer(userId), 10000);
