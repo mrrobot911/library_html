@@ -11,7 +11,6 @@ export const submitModal = (e, users) => {
     e.target.reset();
 
     const userId = localStorage.getItem('user');
-    const db = JSON.parse(localStorage.getItem('users')) || [];
 
     if (e.target.className === 'login__container'){
         users.length > 0 && users.forEach(el => {
@@ -35,19 +34,24 @@ export const submitModal = (e, users) => {
         userData.cardNumber = randomNumber(9);
         users.push(userData);
         localStorage.setItem('users', JSON.stringify(users));
+        localStorage.setItem('user', users.length - 1);
+        visitsCount();
+        userAvatar();
+        findCardContainer(`${users.length -1}`);
+        getCardsMenu();
     } else if (e.target.className === 'curdBuy__formContainer_content') {
-        const user = db[userId];
+        const user = users[userId];
         user.hasCard = true;
-        db[userId] = user;
+        users[userId] = user;
         localStorage.setItem('users', JSON.stringify(db));
     } else {
         const userData = new User();
         let fullName = [];
         formData.has('username') && (fullName = formData.get('username').split(' '));
         formData.has('curdnumber') && (userData.cardNumber = formData.get('curdnumber'));
-        const res = db.filter(el => el.firstName === fullName[0] && el.lastName === fullName[1] && el.cardNumber === userData.cardNumber);
+        const res = users.filter(el => el.firstName === fullName[0] && el.lastName === fullName[1] && el.cardNumber === userData.cardNumber);
         if (res.length > 0) {
-            findCardContainer(db.indexOf(res[0]).toString());
+            findCardContainer(users.indexOf(res[0]).toString());
             setTimeout(()=>findCardContainer(userId), 10000);
         }
     }
