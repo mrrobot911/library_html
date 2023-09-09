@@ -1120,7 +1120,7 @@ body {
     font-weight: 400;
     line-height: 50px;
     letter-spacing: 0.6px;
-    width: 400px;
+    width: 520px;
     margin-bottom: 23px;
     padding: 8px 20px;
     border-radius: 10px;
@@ -1141,6 +1141,7 @@ body {
     border: 1px solid #0C0C0E;
     border-radius: 2px;
     transition: all 0.5s ease-out;
+    cursor: pointer;
 }
 .submit__btn:hover {
     background-color: #BB945F;

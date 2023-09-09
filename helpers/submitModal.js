@@ -11,7 +11,7 @@ export const submitModal = (e, users) => {
     e.target.reset();
 
     const userId = localStorage.getItem('user');
-    const db = JSON.parse(localStorage.getItem('users')) | [];
+    const db = JSON.parse(localStorage.getItem('users')) || [];
 
     if (e.target.className === 'login__container'){
         users.length > 0 && users.forEach(el => {
@@ -20,10 +20,10 @@ export const submitModal = (e, users) => {
             && el.hasOwnProperty('Password') && el.Password === formData.get('password') ){
                 flag = true;
                 localStorage.setItem('user', users.indexOf(el));
+                visitsCount();
                 userAvatar();
                 findCardContainer(users.indexOf(el).toString());
                 getCardsMenu();
-                visitsCount();
             }
         })
     } else if (e.target.className === 'registr__container') {
@@ -45,7 +45,7 @@ export const submitModal = (e, users) => {
         let fullName = [];
         formData.has('username') && (fullName = formData.get('username').split(' '));
         formData.has('curdnumber') && (userData.cardNumber = formData.get('curdnumber'));
-        const res = db.filter(el => el.firstName.match(fullName[0]) && el.lastName.match(fullName[1]) && el.cardNumber.match(userData.cardNumber));
+        const res = db.filter(el => el.firstName === fullName[0] && el.lastName === fullName[1] && el.cardNumber === userData.cardNumber);
         if (res.length > 0) {
             findCardContainer(db.indexOf(res[0]).toString());
             setTimeout(()=>findCardContainer(userId), 10000);
