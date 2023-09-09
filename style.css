@@ -1272,7 +1272,9 @@ body {
 .toggler {
     display: none;
 }
-
+.slider__btn{
+    display: none;
+}
 @media (max-width: 1280px) {
     .favorites__cards{
         display: flex;
@@ -1424,6 +1426,9 @@ body {
     .about__photo-container-min span {
         cursor: pointer;
         margin-top: 35px;
+    }
+    .slider__btn {
+        display: block;
     }
 }
 @media (max-width: 685px ){

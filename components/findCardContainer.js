@@ -31,11 +31,13 @@ export const findCardContainer = () => {
     } else {
         const findCardInputName = createElement('input', {
             type: 'text',
-            placeholder: 'Reader\'s name'
+            placeholder: 'Reader\'s name',
+            name: 'username'
         });
         const findCardInputNumber = createElement('input', {
             type: 'text',
-            placeholder: 'Card number'
+            placeholder: 'Card number',
+            name: 'curdnumber'
         });
         findCardContainer.append(findCardInputName, findCardInputNumber);
     }

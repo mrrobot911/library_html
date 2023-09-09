@@ -28,6 +28,6 @@ getCardsMenu();
 sliderRadioContainer.addEventListener('click', sliseSlider);
 favorites.addEventListener('change', sliseBook);
 body.addEventListener('click', menuOpen);
-body.addEventListener('click', modalOpen);
+body.addEventListener('click', (e)=>modalOpen(e.target));
 body.addEventListener('submit', (e)=>submitModal(e, users));
 

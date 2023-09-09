@@ -8,7 +8,32 @@ import { findCardContainer } from "../components/findCardContainer.js";
 import { getCardsMenu } from "../components/getCardsMenu.js";
 import { userAvatar } from "../components/userAvatar.js";
 
-export const modalOpen = (e) => {
+const formMap = {
+    'registr': (closeEl)=>{
+        closeEl && closeEl.click();
+        const container = registrMenu();
+        return container;
+    },
+    'login': (closeEl)=>{
+        closeEl && closeEl.click();
+        const container = loginMenu();
+        return container;
+    },
+    'profile': (closeEl)=>{
+        closeEl && closeEl.click();
+        const container = profileUser();
+        return container;
+    },
+    'logout': (closeEl)=>{
+        closeEl && closeEl.click();
+        localStorage.removeItem('user');
+        userAvatar();
+        findCardContainer();
+        getCardsMenu();
+    }
+};
+
+export const modalOpen = (target) => {
     const user = localStorage.getItem('user');
     const closeEl = document.querySelector('.close');
 
@@ -18,36 +43,22 @@ export const modalOpen = (e) => {
     const wrapper = createElement('div', {
         className: 'modal__wrapper close'
     });
-    if (e.target.id === 'registr'){
-        closeEl && closeEl.click();
-        const container = registrMenu();
-        wrapperContainer.append(container, wrapper);
-        body.append(wrapperContainer);
-        body.addEventListener('click', modalEvent);
-    } else if (e.target.id === 'login') {
-        closeEl && closeEl.click();
-        const container = loginMenu();
-        wrapperContainer.append(container, wrapper);
-        body.append(wrapperContainer);
-        body.addEventListener('click', modalEvent);
-    } else if (e.target.id === 'profile'){
-        closeEl && closeEl.click();
-        const container = profileUser();
-        wrapperContainer.append(container, wrapper);
-        body.append(wrapperContainer);
-        body.addEventListener('click', modalEvent);
-    } else if (e.target.id === 'logout'){
-        closeEl && closeEl.click();
-        localStorage.removeItem('user');
-        userAvatar();
-        findCardContainer();
-        getCardsMenu();
-    } else if (e.target.className === 'article-btn') {
-        const db = JSON.parse(localStorage.getItem('users'));
-        const flag = user ? JSON.parse(db[user].hasCard) : false;
-        const container = flag ? buyTheBook(e) : user ? curdBuy() : loginMenu();
-        flag ? wrapperContainer.append(container) : wrapperContainer.append(container, wrapper);
-        body.append(wrapperContainer);
-        body.addEventListener('click', modalEvent);
+    const db = JSON.parse(localStorage.getItem('users'));
+    const flag = user ? JSON.parse(db[user].hasCard) : false;
+
+    if (target.className === 'article-btn') {
+            const db = JSON.parse(localStorage.getItem('users'));
+            const flag = user ? JSON.parse(db[user].hasCard) : false;
+            const container = flag ? buyTheBook(target) : user ? curdBuy() : loginMenu();
+            flag ? wrapperContainer.append(container) : wrapperContainer.append(container, wrapper);
+            body.append(wrapperContainer);
+            body.addEventListener('click', modalEvent);
+    } else {
+        const container = formMap[target.id] && formMap[target.id](closeEl, target, flag);
+        if (container){
+            wrapperContainer.append(container, wrapper);
+            body.append(wrapperContainer);
+            body.addEventListener('click', modalEvent);
+        }
     }
 }

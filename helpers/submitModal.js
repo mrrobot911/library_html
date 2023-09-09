@@ -10,9 +10,12 @@ export const submitModal = (e, users) => {
     const formData = new FormData(e.target);
     e.target.reset();
 
+    const userId = localStorage.getItem('user');
+    const db = JSON.parse(localStorage.getItem('users'));
+
     if (e.target.className === 'login__container'){
         users.length > 0 && users.forEach(el => {
-            if (el.hasOwnProperty('Email') && el.Email === formData.get('email')){
+            if (el.hasOwnProperty('Email') && el.Email === formData.get('email') || el.hasOwnProperty('cardNumber') && el.cardNumber === formData.get('email')){
                 flag = true;
                 localStorage.setItem('user', users.indexOf(el));
                 userAvatar();
@@ -31,14 +34,18 @@ export const submitModal = (e, users) => {
         users.push(userData);
         localStorage.setItem('users', JSON.stringify(users));
     } else if (e.target.className === 'curdBuy__formContainer_content') {
-        const userId = localStorage.getItem('user');
-        const db = JSON.parse(localStorage.getItem('users'));
         const user = db[userId];
         user.hasCard = true;
         db[userId] = user;
         localStorage.setItem('users', JSON.stringify(db));
     } else {
-        console.log(e.target);
+        const userData = new User();
+        let fullName = [];
+        formData.has('username') && (fullName = formData.get('username').split(' '));
+        formData.has('curdnumber') && (userData.cardNumber = formData.get('curdnumber'));
+        // if (db.filter(el => {el.firstName === fullName[0] && el.lastName === fullName[1] && el.cardNumber === userData.cardNumber})){
+        //     console.log('1');
+        // }
     }
 
     const closeEl = document.querySelector('.close');

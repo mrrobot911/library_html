@@ -1,7 +1,7 @@
 import { bookCards } from "../helpers/selectors.js";
 
 export const cards = async (season) => {
-    const userId = localStorage.getItem('user');
+    const userId = localStorage.getItem('user') | null;
     const db = JSON.parse(localStorage.getItem('users'));
     function fetchDB() {
         return fetch("../db/books.json")
@@ -18,8 +18,8 @@ export const cards = async (season) => {
         <p >${element.text}</p>
         <img alt="The Book Eaters" loading="lazy" width="200" height="300" decoding="async" data-nimg="1" src="${element.image}"/>
         <button 
-            class=${db[userId].Books.some(el => el.includes(element.name)) ? "own" : "article-btn" }
-        >${db[userId].Books.some(el => el.includes(element.name)) ? 'Own' : 'Buy'}</button>
+            class=${!userId ? "article-btn" : db[userId].Books.some(el => el.includes(element.name)) ? "own" : "article-btn" }
+        >${!userId ? 'Buy' : db[userId].Books.some(el => el.includes(element.name)) ? 'Own' : 'Buy'}</button>
         `);
         return seasonArrayItem
     });
