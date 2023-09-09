@@ -19,7 +19,7 @@ export const submitModal = (e, users) => {
                 flag = true;
                 localStorage.setItem('user', users.indexOf(el));
                 userAvatar();
-                findCardContainer();
+                findCardContainer(users.indexOf(el).toString());
                 getCardsMenu();
                 visitsCount();
             }
@@ -43,9 +43,11 @@ export const submitModal = (e, users) => {
         let fullName = [];
         formData.has('username') && (fullName = formData.get('username').split(' '));
         formData.has('curdnumber') && (userData.cardNumber = formData.get('curdnumber'));
-        // if (db.filter(el => {el.firstName === fullName[0] && el.lastName === fullName[1] && el.cardNumber === userData.cardNumber})){
-        //     console.log('1');
-        // }
+        const res = db.filter(el => el.firstName.match(fullName[0]) && el.lastName.match(fullName[1]) && el.cardNumber.match(userData.cardNumber));
+        if (res.length > 0) {
+            findCardContainer(db.indexOf(res[0]).toString());
+            setTimeout(()=>findCardContainer(userId), 10000);
+        }
     }
 
     const closeEl = document.querySelector('.close');

@@ -28,7 +28,7 @@ export const profileUser = () => {
     const profileUserdataH2 = createElement('h2', {
         textContent: 'My profile'
     });
-    const profileUserdata = profileData(false);
+    const profileUserdata = profileData(false, userId);
 
     const profileRentedBooks = createElement('h3', {
         textContent: 'Rented books',

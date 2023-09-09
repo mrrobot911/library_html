@@ -12,6 +12,7 @@ import { userAvatar } from "./components/userAvatar.js";
 let { arrayRadio, _ } = resize(window.innerWidth);
 const temp = localStorage.getItem('users');
 const users = (temp == null) ? [] : JSON.parse(temp);
+const userId = localStorage.getItem('user');
 
 body.addEventListener('click', checkButton);
 window.addEventListener('resize', function() {
@@ -22,7 +23,7 @@ window.addEventListener('resize', function() {
 resizeDom(arrayRadio);
 cards('Winter');
 userAvatar();
-findCardContainer();
+findCardContainer(userId);
 getCardsMenu();
 
 sliderRadioContainer.addEventListener('click', sliseSlider);

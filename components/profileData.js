@@ -1,7 +1,6 @@
 import { createElement } from "../helpers/helper.js";
 
-export const profileData = (flag) => {
-    const userId = localStorage.getItem('user');
+export const profileData = (flag, userId) => {
     const db = JSON.parse(localStorage.getItem('users'));
 
     const profileUserdata = createElement('div', {

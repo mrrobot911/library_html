@@ -2,9 +2,9 @@ import { createElement } from "../helpers/helper.js"
 import { findCardElem } from "../helpers/selectors.js";
 import { profileData } from "./profileData.js";
 
-export const findCardContainer = () => {
-    const userId = localStorage.getItem('user');
+export const findCardContainer = (userId) => {
     const db = JSON.parse(localStorage.getItem('users'));
+    console.log(userId);
 
     const findCardH3 = createElement('h3', {
         textContent: !userId ? 'Find your Library card' : 'Your Library card'
@@ -42,7 +42,7 @@ export const findCardContainer = () => {
         findCardContainer.append(findCardInputName, findCardInputNumber);
     }
     if (userId){
-        const formSubmit = profileData(true);
+        const formSubmit = profileData(true, userId);
         findCardForm.append(findCardContainer, formSubmit);
     } else {
         const formSubmit = createElement('input', {
