@@ -83,10 +83,10 @@ export const sliderMove = (e) => {
 
     if (e.target.closest('.btn__left') && position < 0) {
         position += 475;
-        fotoContainer.style.left=`${position}px`
+        document.querySelector(`#radio${Math.abs(position/475 - 1)}`).click();
     } else if (e.target.closest('.btn__right') && position > -1900) {
         position -= 475;
-        fotoContainer.style.left=`${position}px`
+        document.querySelector(`#radio${Math.abs(position/475 - 1)}`).click();
     }
     if (position === 0){
         leftBtn.setAttribute('disabled', '');
