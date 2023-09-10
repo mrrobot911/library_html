@@ -17,7 +17,7 @@ export const menuOpen = (e) => {
         className: 'menu__registr'
     });
     const menuH2 = createElement('h2',{
-        className: 'menu__h2',
+        className: user ? 'menu__h2-small' : 'menu__h2',
         textContent: user ? db[user].cardNumber : 'Profile'
     });
     const menuHr = createElement('hr', {

@@ -55,7 +55,7 @@ export const visitsCount = () => {
     localStorage.setItem('users', JSON.stringify(db));
 }
 export const randomNumber = (length) => {
-        const number = Math.floor(Math.pow(10, length-1) + Math.random() * (Math.pow(10, length) - Math.pow(10, length-1) - 1)).toString(16);
+        const number = Math.floor(Math.pow(10, length-1) + Math.random() * (Math.pow(10, length) - Math.pow(10, length-1) - 1)).toString(16).toUpperCase();
         return number.length < 9 ? '0'.repeat(9 - number.length) + number : number
 }
 export function checkButton(e){

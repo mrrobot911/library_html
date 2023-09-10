@@ -1,3 +1,4 @@
+import { cards } from "../components/cards.js";
 import { findCardContainer } from "../components/findCardContainer.js";
 import { getCardsMenu } from "../components/getCardsMenu.js";
 import { userAvatar } from "../components/userAvatar.js";
@@ -23,6 +24,7 @@ export const submitModal = (e, users) => {
                 userAvatar();
                 findCardContainer(users.indexOf(el).toString());
                 getCardsMenu();
+                cards('Winter');
             }
         })
     } else if (e.target.className === 'registr__container') {
@@ -39,6 +41,7 @@ export const submitModal = (e, users) => {
         userAvatar();
         findCardContainer(`${users.length -1}`);
         getCardsMenu();
+        cards('Winter');
     } else if (e.target.className === 'curdBuy__formContainer_content') {
         const user = users[userId];
         user.hasCard = true;

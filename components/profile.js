@@ -36,12 +36,18 @@ export const profileUser = () => {
     const profileRentedBooksList = createElement('ul', {
         className: 'userdata__bookslist'
     });
-    array.forEach(el => {
+    if (array.length > 0) {array.forEach(el => {
         const book = createElement('li', {
             textContent: el
         });
         profileRentedBooksList.append(book);
     });
+    } else {
+        const book = createElement('li', {
+            textContent: 'No books'
+        });
+        profileRentedBooksList.append(book);
+    }
     const profileCard = createElement('div', {
         className: 'userdata__card'
     }); 

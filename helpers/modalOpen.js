@@ -32,7 +32,7 @@ const formMap = {
         userAvatar();
         findCardContainer();
         getCardsMenu();
-        cards();
+        cards('Winter');
     }
 };
 

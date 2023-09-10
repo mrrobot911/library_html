@@ -246,6 +246,7 @@ body {
     padding: 9px 15px;
     align-self: start;
     margin: 10px 0px;
+    cursor: pointer;
 }
 .registr__menu-string {
     display: flex;
@@ -555,6 +556,7 @@ body {
     letter-spacing: 1px;
     padding: 9px 27px;
     border: #0C0C0E solid 1px;
+    background-color: #FFF;
 }
 .curdBuy__container_form p{
     color: #0C0C0E;
@@ -583,6 +585,15 @@ body {
     font-weight: 700;
     line-height: 20px; /* 133.333% */
     margin-top: 5px;
+}
+.menu__h2-small {
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 133.333% */
+    margin-top: 5px;
+    color: #BB945F;
 }
 .menu__hr {
     width: 40px;
