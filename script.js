@@ -33,5 +33,4 @@ body.addEventListener('click', (e)=>modalOpen(e.target));
 body.addEventListener('submit', (e)=>submitModal(e, users));
 body.addEventListener('click', copyToClip);
 body.addEventListener('click', sliderMove);
-fotoContainer.addEventListener('change', console.log(-parseInt(fotoContainer.style.left)/475));
 
