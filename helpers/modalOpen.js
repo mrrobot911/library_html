@@ -7,6 +7,7 @@ import { profileUser } from "../components/profile.js";
 import { findCardContainer } from "../components/findCardContainer.js";
 import { getCardsMenu } from "../components/getCardsMenu.js";
 import { userAvatar } from "../components/userAvatar.js";
+import { cards } from "../components/cards.js";
 
 const formMap = {
     'registr': (closeEl)=>{
@@ -17,6 +18,7 @@ const formMap = {
     'login': (closeEl)=>{
         closeEl && closeEl.click();
         const container = loginMenu();
+        cards();
         return container;
     },
     'profile': (closeEl)=>{
@@ -30,6 +32,7 @@ const formMap = {
         userAvatar();
         findCardContainer();
         getCardsMenu();
+        cards();
     }
 };
 
