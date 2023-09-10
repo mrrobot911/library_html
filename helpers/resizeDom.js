@@ -1,6 +1,8 @@
-import { sliderRadioContainer } from "./selectors.js";
+import { fotoContainer, sliderRadioContainer } from "./selectors.js";
 
 export const resizeDom = (arrayRadio) => {
+    const position = -parseInt(fotoContainer.style.left)/475;
+
     const items = arrayRadio.map((item) => {
         const sliderRadioItem = document.createElement('li');
         sliderRadioItem.className = 'widget__day-item';

@@ -1,5 +1,5 @@
 import { menuOpen } from "./components/menu.js";
-import { body, favorites, sliderRadioContainer } from "./helpers/selectors.js";
+import { body, favorites, fotoContainer, sliderRadioContainer } from "./helpers/selectors.js";
 import { checkButton, copyToClip, resize, sliderMove, sliseBook, sliseSlider, visitsCount } from "./helpers/helper.js";
 import { modalOpen } from "./helpers/modalOpen.js";
 import { resizeDom } from "./helpers/resizeDom.js";
@@ -33,4 +33,5 @@ body.addEventListener('click', (e)=>modalOpen(e.target));
 body.addEventListener('submit', (e)=>submitModal(e, users));
 body.addEventListener('click', copyToClip);
 body.addEventListener('click', sliderMove);
+fotoContainer.addEventListener('change', console.log(-parseInt(fotoContainer.style.left)/475));
 

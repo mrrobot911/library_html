@@ -9,9 +9,9 @@ export const createElement = (tagName,attr) => {
 
 export function resize(windowSize){
     let arrayRadio = [];
-    if (windowSize < 768) {
+    if (windowSize < 970) {
         arrayRadio = [1,2,3,4,5];
-    } else if (windowSize < 1024) {
+    } else if (windowSize < 1460) {
         arrayRadio = [1,2,3,4];
     } else {
         arrayRadio = [1,2,3];
@@ -77,12 +77,21 @@ export const copyToClip = (e) => {
     }
 }
 export const sliderMove = (e) => {
-    const position = parseInt(fotoContainer.style.left);
+    let position = parseInt(fotoContainer.style.left);
+    leftBtn.removeAttribute('disabled');
+    rightBtn.removeAttribute('disabled');
 
     if (e.target.closest('.btn__left') && position < 0) {
-        fotoContainer.style.left=`${position + 475}px`
+        position += 475;
+        fotoContainer.style.left=`${position}px`
     } else if (e.target.closest('.btn__right') && position > -1900) {
-        fotoContainer.style.left=`${position - 475}px`
+        position -= 475;
+        fotoContainer.style.left=`${position}px`
+    }
+    if (position === 0){
+        leftBtn.setAttribute('disabled', '');
+    } else if (position === -1900){
+        rightBtn.setAttribute('disabled', '');
     }
     return fotoContainer, leftBtn, rightBtn
 }

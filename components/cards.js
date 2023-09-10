@@ -29,11 +29,11 @@ export const cards = async (season) => {
         setTimeout(() => {
             bookCards.replaceChildren(...items);
             flag = false;
-        }, 600);
+        }, 500);
         setTimeout(() => {
             bookCards.childNodes.forEach(el => el.className="article");
             flag = true;
-        }, 1000);
+        }, 550);
     } else {
         bookCards.replaceChildren(...items);
         bookCards.childNodes.forEach(el => el.className="article");

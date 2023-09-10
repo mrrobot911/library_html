@@ -43,7 +43,7 @@ export const submitModal = (e, users) => {
         const user = users[userId];
         user.hasCard = true;
         users[userId] = user;
-        localStorage.setItem('users', JSON.stringify(db));
+        localStorage.setItem('users', JSON.stringify(users));
     } else {
         const userData = new User();
         let fullName = [];
