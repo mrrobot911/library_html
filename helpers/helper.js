@@ -74,12 +74,15 @@ export const buyTheBook = (target) => {
 export const copyToClip = (e) => {
     if (e.target.closest('.copyNumber')){
         navigator.clipboard.writeText(e.target.closest('.copyNumber').parentElement.childNodes[1].textContent);
+        alert('Number copied to clipboard');
     }
 }
 export const sliderMove = (e) => {
     let position = parseInt(fotoContainer.style.left);
     leftBtn.removeAttribute('disabled');
     rightBtn.removeAttribute('disabled');
+    rightBtn.childNodes[1].setAttribute('stroke', 'black');
+    leftBtn.childNodes[1].setAttribute('stroke', 'black');
 
     if (e.target.closest('.btn__left') && position < 0) {
         position += 475;
@@ -90,8 +93,10 @@ export const sliderMove = (e) => {
     }
     if (position === 0){
         leftBtn.setAttribute('disabled', '');
+        leftBtn.childNodes[1].setAttribute('stroke', 'grey');
     } else if (position === -1900){
         rightBtn.setAttribute('disabled', '');
+        rightBtn.childNodes[1].setAttribute('stroke', 'grey');
     }
     return fotoContainer, leftBtn, rightBtn
 }

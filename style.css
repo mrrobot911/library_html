@@ -692,6 +692,7 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 58px;
 }
 .about__photo-container {
     height: 560px;
@@ -1298,16 +1299,6 @@ body {
 }
 .slider__btn{
     display: none;
-}
-.slider__btn :hover{
-    color: #BB945F;
-}
-.btn__left {
-    margin-right: 58px;
-    cursor: pointer;
-}
-.btn__right {
-    margin-left: 58px;
     cursor: pointer;
 }
 @media (max-width: 1460px) {

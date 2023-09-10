@@ -1,6 +1,6 @@
 import { menuOpen } from "./components/menu.js";
-import { body, favorites, fotoContainer, sliderRadioContainer } from "./helpers/selectors.js";
-import { checkButton, copyToClip, resize, sliderMove, sliseBook, sliseSlider, visitsCount } from "./helpers/helper.js";
+import { body, favorites, sliderRadioContainer } from "./helpers/selectors.js";
+import { checkButton, copyToClip, resize, sliderMove, sliseBook, sliseSlider } from "./helpers/helper.js";
 import { modalOpen } from "./helpers/modalOpen.js";
 import { resizeDom } from "./helpers/resizeDom.js";
 import { cards } from "./components/cards.js";
